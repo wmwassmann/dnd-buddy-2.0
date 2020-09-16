@@ -1,0 +1,24 @@
+{
+  "name": "dnd-buddy-2.0",
+  "version": "1.0.0",
+  "description": "a basic dnd character sheet application ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmwassmann/dnd-buddy-2.0.git"
+  },
+  "keywords": [
+    "dnd",
+    "buddy"
+  ],
+  "author": "William Wassmann / Alex M / David Deaton / Karl Behrens / Chung Hei Fuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmwassmann/dnd-buddy-2.0/issues"
+  },
+  "homepage": "https://github.com/wmwassmann/dnd-buddy-2.0#readme"
+}
