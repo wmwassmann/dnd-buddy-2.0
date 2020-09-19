@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
 			// 	allowNull: false,
 			// 	len: [1],
 			// },
-			deleted_at: { type: DataTypes.DATE },
+			// deleted_at: { type: DataTypes.DATE },
 		},
 		{
 			freezeTableName: true,
