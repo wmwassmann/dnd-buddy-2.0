@@ -16,6 +16,6 @@ module.exports = function (sequelize, DataTypes) {
         freezeTableName: true,
         paranoid: true,
     });
-      return charClass;
+      return player_race;
 
 };
