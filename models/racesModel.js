@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-    const player_race = sequelize.define('Race', {
+    const player_race = sequelize.define('Races', {
         race: DataTypes.STRING,
         as_str: DataTypes.INTEGER,
         as_dex: DataTypes.INTEGER,
