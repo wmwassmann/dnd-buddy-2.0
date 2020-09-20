@@ -6,7 +6,6 @@ module.exports = function (sequelize, DataTypes) {
 		{
 			name: {
 				type: DataTypes.STRING,
-
 			},
 			// gender: {
 			// 	type: DataTypes.STRING.BINARY,
@@ -19,20 +18,21 @@ module.exports = function (sequelize, DataTypes) {
 			freezeTableName: true,
 			// underscored: true,
 			paranoid: true,
-        }
-    
+		}
 	);
-	
-	charClass.associate = function(models) {
+
+	charClass.associate = function (models) {
 		// We're saying that a charClass should belong to an Author
 		// A charClass can't be created without an Author due to the foreign key constraint
-		charClass.belongsTo(models.mainDatabase, {
-		  foreignKey: {
-			allowNull: false
-		  }
+		// charClass.belongsTo(models.mainDatabase, {
+		//   foreignKey: {
+		// 	allowNull: false
+		//   }
+		// });
+		charClass.hasMany(models.mainDatabase, {
+			onDelete: 'cascade',
 		});
-	  };
-    
-   
+	};
+
 	return charClass;
 };
