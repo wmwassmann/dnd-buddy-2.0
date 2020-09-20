@@ -42,7 +42,17 @@ module.exports = function (sequelize, DataTypes) {
 			// underscored: true,
 			paranoid: true,
 		}
-	);
+    );
+    
+    charSpell.associate = function(models) {
+        // We're saying that a charSpell should belong to an Author
+        // A charSpell can't be created without an Author due to the foreign key constraint
+        charSpell.belongsTo(models.mainDatabase, {
+          foreignKey: {
+            allowNull: true
+          }
+        });
+      };
 
 	return charSpell;
 };

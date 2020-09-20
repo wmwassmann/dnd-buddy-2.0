@@ -16,6 +16,16 @@ module.exports = function (sequelize, DataTypes) {
         freezeTableName: true,
         paranoid: true,
     });
+    
+    racesModel.associate = function(models) {
+      // We're saying that a racesModel should belong to an Author
+      // A racesModel can't be created without an Author due to the foreign key constraint
+      racesModel.belongsTo(models.mainDatabase, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
       return player_race;
 
 };
