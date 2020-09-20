@@ -21,15 +21,18 @@ module.exports = function (sequelize, DataTypes) {
 			paranoid: true,
         }
     
-    );
+	);
+	
+	charClass.associate = function(models) {
+		// We're saying that a charClass should belong to an Author
+		// A charClass can't be created without an Author due to the foreign key constraint
+		charClass.belongsTo(models.mainDatabase, {
+		  foreignKey: {
+			allowNull: false
+		  }
+		});
+	  };
     
-    charClass.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        charClass.hasMany(models.Post, {
-          onDelete: "cascade"
-        });
-      };
-
+   
 	return charClass;
 };
