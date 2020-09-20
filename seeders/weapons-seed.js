@@ -45,11 +45,11 @@ module.exports = {
 		const inputarray = [];
 		for (let i = 0; i < inputData.length; i++) {
 			inputarray.push({
-                name: inputData[i],
-                proficiency: inputData[i],
-                damage_dice: inputData[i],
-                damage_type: inputData[i],
-                properties: inputData[i],
+                name: inputData[i][0],
+                proficiency: inputData[i][1],
+                damage_dice: inputData[i][2],
+                damage_type: inputData[i][3],
+                properties: inputData[i][4],
 				createdAt: date,
                 updatedAt: date,
                 deletedAt: date

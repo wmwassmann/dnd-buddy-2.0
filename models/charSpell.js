@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-	const charWeapon = sequelize.define(
-		'charWeapon',
+	const charSpell = sequelize.define(
+		'charSpell',
 		{
 			name: {
 				type: DataTypes.STRING,
@@ -13,23 +13,28 @@ module.exports = function (sequelize, DataTypes) {
 					len: [1, 80],
 				},
             },
-            proficiency: {
+            casting_class: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 isAlphanumeric: true
             },
+            casting_level: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                isAlphanumeric: true
+            },
+            casting_time: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
             damage_dice: {
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: true
             },
-            damage_type: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            properties: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
+            // properties: {
+            //     type: DataTypes.STRING,
+            //     allowNull: false
+            // },
 			// deleted_at: { type: DataTypes.DATE },
 		},
 		{
@@ -39,5 +44,5 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
-	return charWeapon;
+	return charSpell;
 };
