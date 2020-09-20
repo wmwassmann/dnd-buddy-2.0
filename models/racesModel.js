@@ -23,10 +23,13 @@ module.exports = function (sequelize, DataTypes) {
 	player_race.associate = function (models) {
 		// We're saying that a racesModel should belong to an Author
 		// A racesModel can't be created without an Author due to the foreign key constraint
-		player_race.belongsTo(models.mainDatabase, {
-			foreignKey: {
-				allowNull: false,
-			},
+		// player_race.belongsTo(models.mainDatabase, {
+		// 	foreignKey: {
+		// 		allowNull: false,
+		// 	},
+		// });
+		player_race.hasMany(models.mainDatabase, {
+			onDelete: 'cascade',
 		});
 	};
 	return player_race;
