@@ -1,6 +1,6 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
-      return queryInterface.bulkInsert('Race', [{
+      return queryInterface.bulkInsert('Races', [{
         race: 'Human',
         as_str: 1,
         as_dex: 1,
@@ -69,6 +69,6 @@ module.exports = {
     },
     
     down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('Race', null, {});
+      return queryInterface.bulkDelete('Races', null, {});
     }
   };
