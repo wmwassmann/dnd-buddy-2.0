@@ -31,7 +31,7 @@ $(document).ready(function () {
 	// Does a post to the signup route. If successful, we are redirected to the members page
 	// Otherwise we log any errors
 	function registerUser(email, password) {
-		$.post('/api/signup', {
+		$.post('/api/register', {
 			email: email,
 			password: password,
 		})
