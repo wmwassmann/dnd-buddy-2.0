@@ -28,6 +28,7 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
+	// 1. maindatabase and class - (one to many relationship)
 	CharClass.associate = function (models) {
 		CharClass.hasMany(models.MainDatabase, {
 			onDelete: 'cascade',

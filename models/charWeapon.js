@@ -51,11 +51,21 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
+	// 1. maindatabase and weapon - (many to many relationship)
+	// please alert when putting in the data from frontend
+	// the data goes to main_weapon table
 	CharWeapon.associate = function (models) {
-		CharWeapon.hasMany(models.MainDatabase, {
+		CharWeapon.belongsToMany(models.MainDatabase, {
 			onDelete: 'cascade',
+			through: 'Main_weapon',
 		});
 	};
+	// old code
+	// CharWeapon.associate = function (models) {
+	// 	CharWeapon.hasMany(models.MainDatabase, {
+	// 		onDelete: 'cascade',
+	// 	});
+	// };
 
 	return CharWeapon;
 };
