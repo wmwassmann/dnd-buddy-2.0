@@ -1,6 +1,11 @@
 // Main server
-// Get the dependencies
+// Get the express dependencies
 const express = require('express');
+// express-session for controlling the validality of the login session
+const session = require('express-session');
+// Requiring passport from the passport-config.js
+// (no need for require passport directly as the module export by passport-config has included passport module)
+const passport = require('./config/passport-config');
 
 // Sets up the Express App and PORT for Frontend
 const app = express();
@@ -16,8 +21,16 @@ app.use(express.json());
 // Static directory
 app.use(express.static('public'));
 
-// Set Handlebars.
-var exphbs = require('express-handlebars');
+// (standard requirment for using passport module)
+// the sessions moduel for keeping track of our user's login status
+app.use(
+	session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Set Handlebars
+const exphbs = require('express-handlebars');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -26,12 +39,8 @@ app.set('view engine', 'handlebars');
 const htmlRoute = require('../dnd-buddy-2.0/controllers/htmlRoute');
 // const apiRoute = require('../dnd-buddy-2.0/controllers/apiRoute');
 
-// app.use('/api', apiRoute);
-app.use('/', htmlRoute);
-
-// app.get('/', function (req, res) {
-// 	res.render('index');
-// });
+// app.use(apiRoute);
+app.use(htmlRoute);
 
 // sync the sequelize model
 db.sequelize.sync({ force: true }).then(function () {

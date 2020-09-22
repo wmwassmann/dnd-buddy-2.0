@@ -1,24 +1,16 @@
 'use strict';
 const date = new Date();
 
-const inputData = [
-	'Bard',
-	'Cleric',
-	'Fighter',
-	'Ranger',
-    'Rogue',
-    'Wizard',
-];
+const inputData = ['Bard', 'Cleric', 'Fighter', 'Ranger', 'Rogue', 'Wizard'];
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
 		const inputarray = [];
 		for (let i = 0; i < inputData.length; i++) {
 			inputarray.push({
-                name: inputData[i],
-                createdAt: date,
-                updatedAt: date,
-				
+				name: inputData[i],
+				created_at: date,
+				updated_at: date,
 			});
 		}
 
@@ -30,5 +22,5 @@ module.exports = {
 
 	down: async (queryInterface, Sequelize) => {
 		await queryInterface.bulkDelete('charClass', null, {});
-	}
-}
+	},
+};

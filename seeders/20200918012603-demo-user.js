@@ -434,8 +434,8 @@ module.exports = {
 		for (let i = 0; i < inputData.length; i++) {
 			inputarray.push({
 				name: inputData[i],
-				createdAt: date,
-				updatedAt: date,
+				created_at: date,
+				updated_at: date,
 			});
 		}
 
