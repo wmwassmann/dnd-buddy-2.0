@@ -1,5 +1,9 @@
+// require the npm model
+const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
+// required the database for reading and writing the data into database
+const db = require('../models');
 
 function initialize(passport, getUserByEmail, getUserById) {
 	const authenticateUser = async (email, password, done) => {

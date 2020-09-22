@@ -1,8 +1,15 @@
 'use strict';
+// This charClass.js server for:
+//  1. define the setup of the table in the database
+//  2. define the type and set the restriction for all the variable under charClass
+//  3. define the forgine key relationship (if any)
+//  4. export the charClass table to the database
 
 module.exports = function (sequelize, DataTypes) {
 	const mainDatabase = sequelize.define(
+		// the following 'charClass' define the table name
 		'mainDatabase',
+		// the following object define each element inside this table
 		{
 			name: {
 				type: DataTypes.STRING,
@@ -18,20 +25,6 @@ module.exports = function (sequelize, DataTypes) {
 				allowNull: false,
 				len: [1],
 			},
-			// race: {
-			//     // Foreign Key
-			//     type: DataTypes.STRING,
-			//     allowNull: false,
-			//  	len: [10],
-			// },
-			// class: {
-			//     // Foreign Key
-			//     type: DataTypes.STRING,
-			// },
-			// weaponsSpells: {
-			//     // Foreign Key
-			//     type: DataTypes.STRING,
-			// },
 			level: {
 				type: DataTypes.INTEGER,
 				allowNull: false,
@@ -81,18 +74,18 @@ module.exports = function (sequelize, DataTypes) {
 			deleted_at: { type: DataTypes.DATE },
 		},
 		{
+			// this is the option for the table setup
+			// 1. freeze the table name (will not go to plurual)
 			freezeTableName: true,
-			// underscored: true,
+			// 2. underscore between two words for the column (i.e. updateAt will change to update_at)
+			underscored: true,
+			// 3. the data will not remove from the database (need to define what should be deleted)
 			paranoid: true,
 		}
 	);
 
+	// foreign key setup
 	mainDatabase.associate = function (models) {
-		// Associating mainDatabase with Posts
-		// When an mainDatabase is deleted, also delete any associated Posts
-		// mainDatabase.hasMany(models.racesModel, {
-		// 	onDelete: 'cascade',
-		// });
 		mainDatabase.belongsTo(models.racesModel, {
 			foreignKey: {
 				allowNull: false,
@@ -101,11 +94,6 @@ module.exports = function (sequelize, DataTypes) {
 	};
 
 	mainDatabase.associate = function (models) {
-		// Associating mainDatabase with Posts
-		// When an mainDatabase is deleted, also delete any associated Posts
-		// mainDatabase.hasMany(models.charClass, {
-		// 	onDelete: 'cascade',
-		// });
 		mainDatabase.belongsTo(models.charClass, {
 			foreignKey: {
 				allowNull: false,
@@ -114,11 +102,6 @@ module.exports = function (sequelize, DataTypes) {
 	};
 
 	mainDatabase.associate = function (models) {
-		// Associating mainDatabase with Posts
-		// When an mainDatabase is deleted, also delete any associated Posts
-		// mainDatabase.hasMany(models.charSpell, {
-		// 	onDelete: 'cascade',
-		// });
 		mainDatabase.belongsTo(models.charSpell, {
 			foreignKey: {
 				allowNull: true,
@@ -127,11 +110,6 @@ module.exports = function (sequelize, DataTypes) {
 	};
 
 	mainDatabase.associate = function (models) {
-		// Associating mainDatabase with Posts
-		// When an mainDatabase is deleted, also delete any associated Posts
-		// mainDatabase.hasMany(models.charWeapon, {
-		// 	onDelete: 'cascade',
-		// });
 		mainDatabase.belongsTo(models.charWeapon, {
 			foreignKey: {
 				allowNull: true,
