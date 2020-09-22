@@ -6,9 +6,9 @@
 //  4. export the charName table to the database
 
 module.exports = function (sequelize, DataTypes) {
-	const charName = sequelize.define(
+	const CharName = sequelize.define(
 		// the following 'charName' define the table name
-		'charName',
+		'CharName',
 		// the following object define the element inside this table
 		{
 			name: {
@@ -33,5 +33,5 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
-	return charName;
+	return CharName;
 };
