@@ -6,9 +6,9 @@
 //  4. export the charClass table to the database
 
 module.exports = function (sequelize, DataTypes) {
-	const mainDatabase = sequelize.define(
+	const MainDatabase = sequelize.define(
 		// the following 'charClass' define the table name
-		'mainDatabase',
+		'MainDatabase',
 		// the following object define each element inside this table
 		{
 			name: {
@@ -85,37 +85,37 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
-	mainDatabase.associate = function (models) {
-		mainDatabase.belongsTo(models.racesModel, {
+	MainDatabase.associate = function (models) {
+		MainDatabase.belongsTo(models.racesModel, {
 			foreignKey: {
 				allowNull: false,
 			},
 		});
 	};
 
-	mainDatabase.associate = function (models) {
-		mainDatabase.belongsTo(models.charClass, {
+	MainDatabase.associate = function (models) {
+		MainDatabase.belongsTo(models.charClass, {
 			foreignKey: {
 				allowNull: false,
 			},
 		});
 	};
 
-	mainDatabase.associate = function (models) {
-		mainDatabase.belongsTo(models.charSpell, {
+	MainDatabase.associate = function (models) {
+		MainDatabase.belongsTo(models.charSpell, {
 			foreignKey: {
 				allowNull: true,
 			},
 		});
 	};
 
-	mainDatabase.associate = function (models) {
-		mainDatabase.belongsTo(models.charWeapon, {
+	MainDatabase.associate = function (models) {
+		MainDatabase.belongsTo(models.CharWeapon, {
 			foreignKey: {
 				allowNull: true,
 			},
 		});
 	};
 
-	return mainDatabase;
+	return MainDatabase;
 };

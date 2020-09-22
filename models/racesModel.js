@@ -6,9 +6,9 @@
 //  4. export the race table to the database
 
 module.exports = function (sequelize, DataTypes) {
-	const player_race = sequelize.define(
+	const Race = sequelize.define(
 		// the following 'race' define the table name
-		'Races',
+		'Race',
 		// the following object define each element inside this table
 		{
 			race: DataTypes.STRING,
@@ -34,10 +34,10 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
-	player_race.associate = function (models) {
-		player_race.hasMany(models.mainDatabase, {
+	Race.associate = function (models) {
+		Race.hasMany(models.MainDatabase, {
 			onDelete: 'cascade',
 		});
 	};
-	return player_race;
+	return Race;
 };

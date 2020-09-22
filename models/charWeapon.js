@@ -6,9 +6,9 @@
 //  4. export the charWeapon table to the database
 
 module.exports = function (sequelize, DataTypes) {
-	const charWeapon = sequelize.define(
+	const CharWeapon = sequelize.define(
 		// the following 'charWeapon' define the table name
-		'charWeapon',
+		'CharWeapon',
 		// the following object define each element inside this table
 		{
 			name: {
@@ -51,11 +51,11 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
-	charWeapon.associate = function (models) {
-		charWeapon.hasMany(models.mainDatabase, {
+	CharWeapon.associate = function (models) {
+		CharWeapon.hasMany(models.MainDatabase, {
 			onDelete: 'cascade',
 		});
 	};
 
-	return charWeapon;
+	return CharWeapon;
 };

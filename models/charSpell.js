@@ -6,9 +6,9 @@
 //  4. export the charSpell table to the database
 
 module.exports = function (sequelize, DataTypes) {
-	const charSpell = sequelize.define(
+	const CharSpell = sequelize.define(
 		// the following 'charSpell' define the table name
-		'charSpell',
+		'CharSpell',
 		// the following object define the element inside this table
 		{
 			name: {
@@ -56,11 +56,11 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
-	charSpell.associate = function (models) {
-		charSpell.hasMany(models.mainDatabase, {
+	CharSpell.associate = function (models) {
+		CharSpell.hasMany(models.MainDatabase, {
 			onDelete: 'cascade',
 		});
 	};
 
-	return charSpell;
+	return CharSpell;
 };
