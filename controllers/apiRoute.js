@@ -48,7 +48,7 @@ router.get('/logout', function (req, res) {
 	res.redirect('/');
 });
 
-// Route for getting some data about our user to be used client side
+// Route for getting some data about our user to be used in frontend
 router.get('/api/user_data', function (req, res) {
 	if (!req.user) {
 		// The user is not logged in, send back an empty object
