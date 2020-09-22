@@ -1,26 +1,29 @@
 'use strict';
 const date = new Date();
 
-const inputData = ['Bard', 'Cleric', 'Fighter', 'Ranger', 'Rogue', 'Wizard'];
+const inputData = [
+	['aa@aa.com', '$2y$10$5FtL6gG2ddyUf/9pWKvebOssL4Rw.x32o51Wh/psVA9U/5NWXiQ8K'],
+	['bb@bb.com', '$2y$10$INe1vl9eyXC3Hm3gCw954eH.3m2JeOAoxOjd7mVAXwQ3yWAfHUNsK'],
+];
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
 		const inputarray = [];
 		for (let i = 0; i < inputData.length; i++) {
 			inputarray.push({
-				name: inputData[i],
+				email: inputData[i][0],
+				password: inputData[i][1],
 				created_at: date,
 				updated_at: date,
 			});
 		}
-
-		await queryInterface.bulkInsert('charClass', inputarray, {
+		await queryInterface.bulkInsert('user', inputarray, {
 			validate: true,
 			ignoreDuplicates: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete('charClass', null, {});
+		await queryInterface.bulkDelete('user', null, {});
 	},
 };
