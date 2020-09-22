@@ -85,6 +85,8 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
+
+	// 1. maindatabase and race - (one to many relationship)
 	MainDatabase.associate = function (models) {
 		MainDatabase.belongsTo(models.racesModel, {
 			foreignKey: {
@@ -93,6 +95,7 @@ module.exports = function (sequelize, DataTypes) {
 		});
 	};
 
+	// 2. maindatabase and class - (one to many relationship)
 	MainDatabase.associate = function (models) {
 		MainDatabase.belongsTo(models.charClass, {
 			foreignKey: {
@@ -101,21 +104,39 @@ module.exports = function (sequelize, DataTypes) {
 		});
 	};
 
+	// 3. maindatabase and spell - (many to many relationship)
+	// please alert when putting in the data from frontend
+	// the data goes to main_spell table
 	MainDatabase.associate = function (models) {
-		MainDatabase.belongsTo(models.charSpell, {
-			foreignKey: {
-				allowNull: true,
-			},
+		MainDatabase.belongsToMany(models.charSpell, {
+			through: 'Main_spell',
 		});
 	};
+	// old code
+	// MainDatabase.associate = function (models) {
+	// 	MainDatabase.belongsTo(models.charSpell, {
+	// 		foreignKey: {
+	// 			allowNull: true,
+	// 		},
+	// 	});
+	// };
 
+	// 4. maindatabase and weapon - (many to many relationship)
+	// please alert when putting in the data from frontend
+	// the data goes to main_weapon table
 	MainDatabase.associate = function (models) {
-		MainDatabase.belongsTo(models.CharWeapon, {
-			foreignKey: {
-				allowNull: true,
-			},
+		MainDatabase.belongsToMany(models.charWeapon, {
+			through: 'Main_weapon',
 		});
 	};
+	// old code
+	// MainDatabase.associate = function (models) {
+	// 	MainDatabase.belongsTo(models.CharWeapon, {
+	// 		foreignKey: {
+	// 			allowNull: true,
+	// 		},
+	// 	});
+	// };
 
 	MainDatabase.associate = function (models) {
 		MainDatabase.belongsTo(models.User, {

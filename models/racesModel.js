@@ -34,10 +34,12 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
+	// 1. maindatabase and race - (one to many relationship)
 	Race.associate = function (models) {
 		Race.hasMany(models.MainDatabase, {
 			onDelete: 'cascade',
 		});
 	};
+
 	return Race;
 };

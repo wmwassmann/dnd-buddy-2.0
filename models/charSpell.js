@@ -56,11 +56,23 @@ module.exports = function (sequelize, DataTypes) {
 	);
 
 	// foreign key setup
+	// 1. maindatabase and spell - (many to many relationship)
+	// please alert when putting in the data from frontend
+	// the data goes to main_spell table
 	CharSpell.associate = function (models) {
-		CharSpell.hasMany(models.MainDatabase, {
+		CharSpell.belongsToMany(models.MainDatabase, {
 			onDelete: 'cascade',
+			through: 'Main_spell',
 		});
 	};
+	// old
+
+	// old code
+	// CharSpell.associate = function (models) {
+	// 	CharSpell.hasMany(models.MainDatabase, {
+	// 		onDelete: 'cascade',
+	// 	});
+	// };
 
 	return CharSpell;
 };
