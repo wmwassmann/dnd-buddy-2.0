@@ -37,9 +37,9 @@ app.set('view engine', 'handlebars');
 
 // Set the route
 const htmlRoute = require('../dnd-buddy-2.0/controllers/htmlRoute');
-// const apiRoute = require('../dnd-buddy-2.0/controllers/apiRoute');
+const apiRoute = require('../dnd-buddy-2.0/controllers/apiRoute');
 
-// app.use(apiRoute);
+app.use(apiRoute);
 app.use(htmlRoute);
 
 // sync the sequelize model
