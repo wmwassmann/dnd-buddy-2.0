@@ -1,3 +1,5 @@
+/* This CSS file serve register and login page only */
+
 /* Part 1 - main container style */
 /* Part 1.1 - set the size fot the main container
 Note: Please refer to @ media query for different min-width for the main container (Part 1.1.a)*/
@@ -48,7 +50,7 @@ h3 {
 /* end of Part 1 */
 
 /* Part 2 - sign up form style setting */
-.registerTitle {
+.topTitle {
 	padding-left: 50px;
 	font-size: 3.5rem;
 }
@@ -61,17 +63,25 @@ h3 {
 	font-size: 1.8rem;
 }
 
-.registerBtn {
+.login {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	font-size: 1.8rem;
+}
+
+.btn {
 	background-color: rgb(185, 185, 185);
 	color: rgb(120, 120, 120);
 }
 
-.registerBtn:hover {
+.btn:hover {
 	background-color: rgb(120, 120, 120);
 	color: black;
 }
 
-.registerToLogin {
+.footerRoute {
 	padding-left: 50px;
 	font-size: 1.5rem;
 }
