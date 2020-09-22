@@ -55,9 +55,11 @@ module.exports = function (sequelize, DataTypes) {
 	});
 
 	// foreign key setup
-	// User.associate = function (models) {
-	// 	User.hasMany(models.Candle);
-	// };
+	User.associate = function (models) {
+		User.hasMany(models.MainDatabase, {
+			onDelete: 'cascade',
+		});
+	};
 
 	return User;
 };
