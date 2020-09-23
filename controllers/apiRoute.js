@@ -74,7 +74,7 @@ router.get('/api/charname', isAuthenticated, function (req, res) {
 		});
 });
 
-router.get('/api/charnameone', async function (req, res) {
+router.get('/api/charnameone', isAuthenticated, async function (req, res) {
 	// find the max row number from the charname table
 	const charNameTotal = await db.CharName.count({});
 	// res.json for showing the result into the browser (commant it our because it can only show once in one get call)
