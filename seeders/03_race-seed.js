@@ -66,6 +66,19 @@ module.exports = {
 				created_at: new Date(),
 				updated_at: new Date(),
 			},
+			{
+				race: 'Tiefling',
+				as_str: 0,
+				as_dex: 0,
+				as_con: 0,
+				as_int: 1,
+				as_wis: 0,
+				as_cha: 2,
+				language: 'Common',
+				language2: 'Infernal',
+				created_at: new Date(),
+				updated_at: new Date(),
+			}
 		]);
 	},
 
