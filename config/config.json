@@ -1,7 +1,7 @@
 {
 	"development": {
 		"username": "root",
-		"password": "Karl41693",
+		"password": "password",
 		"database": "dndbuddy",
 		"host": "127.0.0.1",
 		"dialect": "mysql"
@@ -15,7 +15,7 @@
 	},
 	"production": {
 		"username": "root",
-		"password": "Karl41693",
+		"password": "password",
 		"database": "dndbuddy",
 		"host": "127.0.0.1",
 		"dialect": "mysql"
