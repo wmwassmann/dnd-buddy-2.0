@@ -1,9 +1,12 @@
 // Function to load character information from Local Storage if any exists
 $(window).on('load', function () {
+	// the script for loading the character data from database (if found)
+
+	// we will get the name / gender / race / class from the maindatabase table (if the character exist)
+	// we will put these data into the local stroage of these four items
 
 	//If statement to check if Local Storage has charcater info
 	if (localStorage.charClass != null) {
-		
 		//Get info from local storage
 		var name = localStorage.getItem('charName');
 		var gender = localStorage.getItem('charGender');
@@ -20,10 +23,7 @@ $(window).on('load', function () {
 		weaponsSpells();
 		randomImage();
 		stats();
-	}
-	
-	else {
-
+	} else {
 		//Generates name and creates dropdown for Gender, Race and Class
 		generateName();
 		$('#gender').text('Gender');
@@ -33,22 +33,24 @@ $(window).on('load', function () {
 	}
 });
 
-
 // Random Name Function
 function generateName() {
+	$.get('/api/charnameone', function (data) {
+		localStorage.setItem('charName', data.name);
+	});
 
 	// Random Name API, ajax GET and Then function
-	var queryURL =
-		'https://cors-anywhere.herokuapp.com/https://uzby.com/api.php?min=3&max=10';
+	// var queryURL =
+	// 	'https://cors-anywhere.herokuapp.com/https://uzby.com/api.php?min=3&max=10';
 
-	$.ajax({
-		url: queryURL,
-		method: 'GET',
-	}).then(function (response) {
-		console.log(response);
-		$('#characterName').text(response);
-		localStorage.setItem('charName', response);
-	});
+	// $.ajax({
+	// 	url: queryURL,
+	// 	method: 'GET',
+	// }).then(function (response) {
+	// 	console.log(response);
+	// 	$('#characterName').text(response);
+	// localStorage.setItem('charName', response);
+	// });
 }
 
 //Function to edit Character Name
@@ -83,13 +85,14 @@ $('#characterName').dblclick(function () {
 
 // Allows user to edit Gender, Race and Class
 function editGenderRaceClass() {
-
 	//Dynamically creates dropdown
 	$('#addDrop').attr('data-dropdown-menu', '');
 	$('#removeGender').addClass('is-dropdown-submenu-parent opens-right');
 	$('#removeRace').addClass('is-dropdown-submenu-parent opens-right');
 	$('#removeClass').addClass('is-dropdown-submenu-parent opens-right');
-	$('#genderUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
+	$('#genderUL').addClass(
+		'menu submenu is-dropdown-submenu first-sub vertical'
+	);
 	$('#raceUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
 	$('#classUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
 

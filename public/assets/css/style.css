@@ -9,6 +9,7 @@ Note: Please refer to @ media query for different min-width for the main contain
 	min-width: 950px;
 	width: 100%;
 	max-width: 1250px;
+	margin-top: 50px;
 }
 /* Part 1.1.2 - set the style for the scroll bar */
 ::-webkit-scrollbar {
@@ -180,9 +181,7 @@ Note : Please refer to @ media query for different margin-bottom for the top row
 /* Part 3 - styling for the dice row */
 /* Part 3.1 - hide the upper row dice for large screen
 Note: the @media query will display second row (Part 3.1.a & 3.1.b)*/
-.secondRow {
-	display: none;
-}
+
 /* Part 3.2 - the styling for the dice row */
 .diceRow {
 	padding-left: 10%;
@@ -191,7 +190,7 @@ Note: the @media query will display second row (Part 3.1.a & 3.1.b)*/
 /* Part 3.3 - set the style for the dice container 
 Note: different container max-dimension in @media query (Part 3.3.a) */
 .containerDice {
-	min-height: 150px;
+	min-height: 50px;
 	width: 950px;
 }
 
@@ -201,30 +200,26 @@ Note: different container max-dimension in @media query (Part 3.3.a) */
 }
 /* Part 3.4 - set a row for styling the dice tray */
 .diceGrid {
-	height: 100px;
+	height: 65px;
 	width: 730px;
-	font-size: 80px;
+	font-size: 53px;
 	text-align: center;
 }
-/* Part 3.5 - set the styling for the first 3 dice div
+/* Part 3.5 - seSt the styling for the first 3 dice div
 Note: different border setup for the dice tray in small screen @media query (Part 3.5.a)  */
 .diceTray1 {
-	border-left: solid;
-	border-top: solid;
-	border-bottom: solid;
 	display: flex;
 	justify-content: space-evenly;
-	background-color: rgb(180, 150, 120);
+	background-color: black;
+	color: wheat;
 }
 /* Part 3.6 - set the styling for the last 3 dice div 
 Note: different border setup for the dice tray in small screen @media query (Part 3.6.a)  */
 .diceTray2 {
-	border-right: solid;
-	border-top: solid;
-	border-bottom: solid;
 	display: flex;
 	justify-content: space-evenly;
-	background-color: rgb(180, 150, 120);
+	background-color: black;
+	color: wheat;
 }
 /* end of Part 3 - styling for the dice row */
 
@@ -324,7 +319,7 @@ Note: different border setup for the dice tray in small screen @media query (Par
 }
 /* Part 4.3.3.1 - set the height and width to fixed the base image */
 .spellEquImage {
-	height: 100%;
+	height: 92%;
 	width: 100%;
 }
 /* Part 4.3.3.2 - set the style of the text box */
@@ -366,8 +361,33 @@ Note: different border setup for the dice tray in small screen @media query (Par
 }
 /* end of part 5 */
 
+/* Part 6 - Style for footer navbar */
+.secondRow {
+	display: none;
+}
+
+.navbar {
+	display: inline-flex;
+	background: rgb(8, 8, 8);
+	float: right;
+}
+
+.navbar-light .navbar-brand {
+	color: wheat;
+}
+
+.fixed-bottom {
+	display: block;
+}
+
+.computer {
+	display: none;
+}
+
+/* end of part 6 */
+
 /* For medium screen (e.g. tablets) */
-@media screen and (min-width: 640px) and (max-width: 768px) {
+@media screen and (min-width: 640px) and (max-width: 760px) {
 	/* Part 1.1.a - change the min-width of the main container */
 	.mainContainer {
 		min-width: 380px;
@@ -386,6 +406,33 @@ Note: different border setup for the dice tray in small screen @media query (Par
 	.forthRow {
 		display: none;
 	}
+	.navbar {
+		display: none;
+	}
+
+	.diceTray1 {
+		height: 80px;
+		border-left: solid;
+		border-top: solid;
+		border-bottom: solid;
+		border-right: none;
+		display: flex;
+		justify-content: space-evenly;
+		background-color: rgb(180, 150, 120);
+		color: black;
+	}
+	/* Part 3.6.a - change the border setting */
+	.diceTray2 {
+		height: 80px;
+		border-top: solid;
+		border-right: solid;
+		border-bottom: solid;
+		border-left: none;
+		display: flex;
+		justify-content: space-evenly;
+		background-color: rgb(180, 150, 120);
+		color: black;
+	}
 }
 
 /* For small screens (e.g. phone) */
@@ -394,6 +441,7 @@ Note: different border setup for the dice tray in small screen @media query (Par
 	.mainContainer {
 		min-width: 0px;
 		max-width: 100%;
+		margin-top: 60px;
 	}
 
 	.reveal button {
@@ -405,13 +453,13 @@ Note: different border setup for the dice tray in small screen @media query (Par
 		margin-bottom: 20px;
 	}
 
-	/* Part 3.1.a - display the upper row dice */
+	/* Part 3.1.a - hide the upper row dice */
 	.secondRow {
-		display: block;
+		display: none;
 	}
 	/* Part 3.1.b - hide the upper row dice */
 	.forthRow {
-		display: none;
+		display: block;
 	}
 	/* Part 3.3.a - change the min-height for dice container dimension */
 	.containerDice {
@@ -420,9 +468,10 @@ Note: different border setup for the dice tray in small screen @media query (Par
 	}
 	/* Part 3.5.a - change the border setting */
 	.diceTray1 {
+		height: 80px;
 		border-left: solid;
 		border-top: solid;
-		border-bottom: solid;
+		border-bottom: none;
 		border-right: solid;
 		display: flex;
 		justify-content: space-evenly;
@@ -430,11 +479,115 @@ Note: different border setup for the dice tray in small screen @media query (Par
 	}
 	/* Part 3.6.a - change the border setting */
 	.diceTray2 {
+		height: 80px;
+		border-top: none;
 		border-right: solid;
 		border-bottom: solid;
 		border-left: solid;
 		display: flex;
 		justify-content: space-evenly;
 		background-color: rgb(180, 150, 120);
+	}
+
+	/* Part 3.7.a - add navbar for mobile navigation */
+	.fixed-bottom {
+		display: block;
+	}
+
+	.navbar {
+		display: inline-flex;
+		height: 50px;
+		background: rgb(8, 8, 8);
+	}
+
+	.navbar-light .navbar-brand {
+		color: wheat;
+	}
+
+	/* Part 3.8.a - simplify mobile home screen by eliminating some elements */
+	.mobile {
+		display: none;
+	}
+
+	/* Part 3.9.a - make character image smaller for mobile */
+	#centerVidImg {
+		max-height: 230px;
+		max-width: 230px;
+		object-fit: cover;
+	}
+
+	.sideStatImg {
+		padding-top: 5px;
+		height: 120px;
+		width: 120px;
+	}
+
+	.topStatImgSide {
+		margin-left: 28px;
+		height: 120px;
+		width: 120px;
+		opacity: 80%;
+	}
+
+	.topStatText {
+		padding-top: 10px;
+	}
+
+	.parent {
+		display: flex;
+	}
+
+	.inline-block-child {
+		flex: 1;
+	}
+
+	.topStatImgSideOff {
+		height: 110px;
+		width: 110px;
+		padding: 2px;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	h4 {
+		font-size: 20px;
+	}
+
+	h5 {
+		font-size: 16px;
+	}
+
+	.containerCenterRight {
+		height: 255px;
+	}
+	.containerCenterLeft {
+		height: 145px;
+	}
+
+	.skillImage {
+		height: 140px;
+	}
+
+	.skillText {
+		padding: 5px;
+		height: 130px;
+	}
+
+	.sideStat {
+		padding-bottom: 5px;
+	}
+
+	.diceTray1 {
+		color: black;
+	}
+
+	.diceTray2 {
+		color: black;
 	}
 }

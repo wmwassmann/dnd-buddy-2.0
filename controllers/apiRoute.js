@@ -36,6 +36,7 @@ router.post('/api/register', function (req, res) {
 	})
 		.then(function () {
 			res.redirect(307, '/api/login');
+			// res.render('indexmodal')
 		})
 		.catch(function (err) {
 			res.status(401).json(err);
@@ -61,6 +62,39 @@ router.get('/api/user_data', function (req, res) {
 			id: req.user.id,
 		});
 	}
+});
+
+router.get('/api/charname', isAuthenticated, function (req, res) {
+	db.CharName.findAll({})
+		.then(function (charNameFullList) {
+			res.json(charNameFullList);
+		})
+		.catch(function (err) {
+			res.status(500).json(err);
+		});
+});
+
+router.get('/api/charnameone', isAuthenticated, async function (req, res) {
+	// find the max row number from the charname table
+	const charNameTotal = await db.CharName.count({});
+	// res.json for showing the result into the browser (commant it our because it can only show once in one get call)
+	// res.json(charNameTotal);
+	// console log the result
+	console.log(charNameTotal);
+	const charRandomNum = Math.floor(Math.random() * charNameTotal + 1);
+	await db.CharName.findOne({
+		where: { id: charRandomNum },
+	})
+		.then(function (charNameResult) {
+			res.json(charNameResult);
+		})
+		.catch(function (err) {
+			res.status(500).json(err);
+		});
+	// function for solely get the respone to json (reference only)
+	// db.CharName.count({}).then(function (charNameCount) {
+	// 	res.json(charNameCount);
+	// });
 });
 
 module.exports = router;
