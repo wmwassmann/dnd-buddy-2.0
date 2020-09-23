@@ -24,8 +24,10 @@ $('#toRandom').click(function () {
 		playerSelection[1] = 'Dwarf';
 	} else if (raceNum === 1) {
 		playerSelection[1] = 'Elf';
-	} else {
+	} else if (raceNum === 2) {
 		playerSelection[1] = 'Human';
+	} else if (raceNum === 3) { 
+		playerSelection[1] = 'Tiefling';
 	}
 
 	// Picks a class
@@ -40,7 +42,9 @@ $('#toRandom').click(function () {
 		playerSelection[4] = 'Ranger';
 	} else if (classNum === 4) {
 		playerSelection[4] = 'Wizard';
-    }
+    } else if (classNum === 5) {
+		playerSelection[4] = 'Bard';
+	}
     
     //Saves to localStorage
 	saveToLocal(playerSelection);
