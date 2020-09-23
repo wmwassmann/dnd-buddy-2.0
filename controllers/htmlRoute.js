@@ -22,10 +22,15 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 router.get('/register', function (req, res) {
 	// If the user already has an account send them to the members page
 	if (req.user) {
-		return res.redirect('/');
+		// return res.redirect('/');
+		return res.render('index');
 	}
 	res.render('register', { layout: 'auth' });
 });
+
+// router.get('/modal', isAuthenticated, function (req, res) {
+// 	res.render('indexmodal');
+// });
 
 // the route for login into the page
 router.get('/login', function (req, res) {
@@ -39,7 +44,7 @@ router.get('/login', function (req, res) {
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get('/', isAuthenticated, function (req, res) {
-	res.render('index');
+	res.render('indexmodal');
 });
 
 module.exports = router;

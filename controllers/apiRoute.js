@@ -36,6 +36,7 @@ router.post('/api/register', function (req, res) {
 	})
 		.then(function () {
 			res.redirect(307, '/api/login');
+			// res.render('indexmodal')
 		})
 		.catch(function (err) {
 			res.status(401).json(err);
