@@ -191,7 +191,7 @@ function editClass() {
 	if (classCount === 0) {
 		$.get('/api/charclass', function (data) {
 			for (let i = 0; i < data.length; i++) {
-				let charCl = data[i].name;
+				let charCl = data[i].class;
 				let classList = $('<li>', {
 					text: charCl,
 					class: 'classDropdown',
