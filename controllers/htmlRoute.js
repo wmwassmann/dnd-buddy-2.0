@@ -22,8 +22,8 @@ const isAuthenticated = require('../config/middleware/isAuthenticated');
 router.get('/register', function (req, res) {
 	// If the user already has an account send them to the members page
 	if (req.user) {
-		// return res.redirect('/');
-		return res.render('indexmodal');
+		return res.redirect('/');
+		// return res.render('indexmodal');
 	}
 	res.render('register', { layout: 'auth' });
 });
@@ -34,6 +34,7 @@ router.get('/register', function (req, res) {
 
 // the route for login into the page
 router.get('/login', function (req, res) {
+	// console.log('login route rum');
 	// If the user already sign in an account send them to the main page
 	if (req.user) {
 		return res.redirect('/');
@@ -44,7 +45,18 @@ router.get('/login', function (req, res) {
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get('/', isAuthenticated, function (req, res) {
+	// console.log('normal route rum');
 	res.render('index');
+	// *** for testing only - for indexmodal even the normal login route
+	// res.render('indexmodal');
+});
+
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+// this route is serve for the user to go to the LANDING PAGE WITH MODAL
+router.get('/indexModal', isAuthenticated, function (req, res) {
+	// console.log('indexmodal is running');
+	res.render('indexmodal');
 });
 
 module.exports = router;

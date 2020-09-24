@@ -71,7 +71,7 @@ $('#closeM1').click(function () {
 });
 
 // 2. Races modal
-$(document).on('click', '.toModal3', function () {
+$(document).on('click', '.toModal3', async function () {
 	event.preventDefault();
 	gender = $(this).attr('dataValue');
 	playerSelection.push(gender);
@@ -101,24 +101,41 @@ $(document).on('click', '.toModal3', function () {
 	// append the modal1h1 to the div
 	$(modal3).append(modal3p1);
 
-	// const classArray = await gettheracelist();
+	// the async method
+	// need to add "async" in front of the "function" on line 74 where the modal start
+	// when using this method
+	const classArray = await gettheracelist();
+	console.log(classArray);
+	for (let i = 0; i < classArray.length; i++) {
+		let modelbtn = 'modal3b' + i;
+		// create a button tag for the answers
+		modelbtn = $('<button>');
+		// add the class and ID for the button
+		$(modelbtn).addClass('button revealButton toModal4');
+		// add the data value for the button
+		$(modelbtn).attr('dataValue', classArray[i]);
+		// add value for the button
+		$(modelbtn).text(classArray[i]);
+		// append the button to the div
+		$(modal3).append(modelbtn);
+	}
 
-	// console.log(classArray);
-	$.get('/api/charrace', function (data) {
-		for (let i = 0; i < data.length; i++) {
-			let modelbtn = 'modal3b' + i;
-			// create a button tag for the answers
-			modelbtn = $('<button>');
-			// add the class and ID for the button
-			$(modelbtn).addClass('button revealButton toModal4');
-			// add the data value for the button
-			$(modelbtn).attr('dataValue', data[i].race);
-			// add value for the button
-			$(modelbtn).text(data[i].race);
-			// append the button to the div
-			$(modal3).append(modelbtn);
-		}
-	});
+	// the non async method
+	// $.get('/api/charrace', function (data) {
+	// 	for (let i = 0; i < data.length; i++) {
+	// 		let modelbtn = 'modal3b' + i;
+	// 		// create a button tag for the answers
+	// 		modelbtn = $('<button>');
+	// 		// add the class and ID for the button
+	// 		$(modelbtn).addClass('button revealButton toModal4');
+	// 		// add the data value for the button
+	// 		$(modelbtn).attr('dataValue', data[i].race);
+	// 		// add value for the button
+	// 		$(modelbtn).text(data[i].race);
+	// 		// append the button to the div
+	// 		$(modal3).append(modelbtn);
+	// 	}
+	// });
 
 	// for (let i = 0; i < classArray.length; i++) {
 	// 	const modelbtn = 'modal3b' + i;
@@ -351,7 +368,10 @@ $(document).on('click', '.toModal6', function () {
 		var suggestion = 'Rogue';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
-	} else if (playerSelection[2] === 'Either' && playerSelection[3] === 'Spells') {
+	} else if (
+		playerSelection[2] === 'Either' &&
+		playerSelection[3] === 'Spells'
+	) {
 		var suggestion = 'Bard';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);

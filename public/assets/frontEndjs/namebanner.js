@@ -1,9 +1,10 @@
 // Function to load character information from Local Storage if any exists
 $(window).on('load', function () {
-	// the script for loading the character data from database (if found)
-
-	// we will get the name / gender / race / class from the maindatabase table (if the character exist)
-	// we will put these data into the local stroage of these four items
+	// The function "sendCharInfoToLocal" serve for
+	// 1. loading the character data from database (**return null if not found)
+	// 2. get the name / gender / race / class from the maindatabase table (if the character exist)
+	// 3. put these data into the local stroage of the corresponding items (i.e.character name to charName-localstroage)
+	sendCharInfoToLocal();
 
 	//If statement to check if Local Storage has charcater info
 	if (localStorage.charClass != null) {
@@ -32,12 +33,6 @@ $(window).on('load', function () {
 		editGenderRaceClass();
 	}
 });
-
-// Random Name Function
-// function generateName() {
-// 	$.get('/api/charnameone', function (data) {
-// 		localStorage.setItem('charName', data.name);
-// 	});
 
 // 	// Random Name API, ajax GET and Then function
 // 	// var queryURL =

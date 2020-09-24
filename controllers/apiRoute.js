@@ -17,14 +17,34 @@ const passport = require('../config/passport-config');
 var isAuthenticated = require('../config/middleware/isAuthenticated');
 
 // Using the passport.authenticate middleware with our local strategy.
-// If the user has valid login credentials, send them to the members page.
+// If the user has valid login credentials, send them to the landing page.
 // Otherwise the user will be sent an error
 router.post('/api/login', passport.authenticate('local'), function (req, res) {
+	// console.log('api login run');
 	res.json({
 		email: req.user.email,
 		id: req.user.id,
 	});
 });
+
+// Using the passport.authenticate middleware with our local strategy.
+// If the user has valid login credentials, send them to the landing page with modal.
+// Otherwise the user will be sent an error
+router.post(
+	'/api/indexModal',
+	passport.authenticate('local', {
+		successRedirect: '/indexModal',
+		failureRedirect: '/login',
+		// failureFlash: true,
+	}),
+	function (req, res) {
+		// console.log('post api indexmodal am runninh');
+		res.json({
+			email: req.user.email,
+			id: req.user.id,
+		});
+	}
+);
 
 // Route for registering a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -35,8 +55,7 @@ router.post('/api/register', function (req, res) {
 		password: req.body.password,
 	})
 		.then(function () {
-			res.redirect(307, '/api/login');
-			// res.render('indexmodal')
+			res.redirect(307, '/api/indexModal');
 		})
 		.catch(function (err) {
 			res.status(401).json(err);
