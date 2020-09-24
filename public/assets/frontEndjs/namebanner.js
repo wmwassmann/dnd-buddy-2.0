@@ -131,10 +131,22 @@ function editGenderRaceClass() {
 		$(humList).text('Human');
 		$('#raceUL').append(humList);
 
+		//Creates Tiefling List Item
+		var tiefList = $('<li>');
+		$(tiefList).attr('id', 'tiefList');
+		$(tiefList).text('Tielfing');
+		$('#raceUL').append(tiefList);
+
 		raceCount = raceCount + 1;
 	}
 
 	if (classCount === 0) {
+		// Creates Bard List Item
+		var bardList = $('<li>');
+		$(bardList).attr('id', 'bardList');
+		$(bardList).text('Bard');
+		$('#classUL').append(bardList);
+
 		// Creates Cleric List Item
 		var cleList = $('<li>');
 		$(cleList).attr('id', 'cleList');
@@ -189,6 +201,7 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();
@@ -196,6 +209,7 @@ function editGenderRaceClass() {
 			$('#raceUL').removeClass();
 		}
 		if (classDisplay !== null) {
+			$('#bardList').remove();
 			$('#cleList').remove();
 			$('#figList').remove();
 			$('#ranList').remove();
@@ -230,6 +244,7 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();
@@ -237,6 +252,7 @@ function editGenderRaceClass() {
 			$('#raceUL').removeClass();
 		}
 		if (classDisplay !== null) {
+			$('#bardList').remove();
 			$('#cleList').remove();
 			$('#figList').remove();
 			$('#ranList').remove();
@@ -258,6 +274,7 @@ function editGenderRaceClass() {
 		$('#dwarfList').remove();
 		$('#elfList').remove();
 		$('#humList').remove();
+		$('#tiefList').remove();
 		raceCount = 0;
 		$('#addDrop').removeAttr('data-dropdown-menu', '');
 		$(document).foundation();
@@ -278,6 +295,7 @@ function editGenderRaceClass() {
 			$('#genderUL').removeClass();
 		}
 		if (classDisplay !== null) {
+			$('#bardList').remove();
 			$('#cleList').remove();
 			$('#figList').remove();
 			$('#ranList').remove();
@@ -299,6 +317,7 @@ function editGenderRaceClass() {
 		$('#dwarfList').remove();
 		$('#elfList').remove();
 		$('#humList').remove();
+		$('#tiefList').remove();
 		raceCount = 0;
 		$('#addDrop').removeAttr('data-dropdown-menu', '');
 		$(document).foundation();
@@ -319,6 +338,7 @@ function editGenderRaceClass() {
 			$('#genderUL').removeClass();
 		}
 		if (classDisplay !== null) {
+			$('#bardList').remove();
 			$('#cleList').remove();
 			$('#figList').remove();
 			$('#ranList').remove();
@@ -340,6 +360,7 @@ function editGenderRaceClass() {
 		$('#dwarfList').remove();
 		$('#elfList').remove();
 		$('#humList').remove();
+		$('#tiefList').remove();
 		raceCount = 0;
 		$('#addDrop').removeAttr('data-dropdown-menu', '');
 		$(document).foundation();
@@ -360,6 +381,50 @@ function editGenderRaceClass() {
 			$('#genderUL').removeClass();
 		}
 		if (classDisplay !== null) {
+			$('#bardList').remove();
+			$('#cleList').remove();
+			$('#figList').remove();
+			$('#ranList').remove();
+			$('#rogList').remove();
+			$('#wizList').remove();
+			classCount = 0;
+			$('#addDrop').removeAttr('data-dropdown-menu', '');
+			$(document).foundation();
+			$('#removeClass').removeClass();
+			$('#classUL').removeClass();
+		}
+	});
+
+	// Displays and sets 'Tiefling' to localStorage on Click
+	$('#tiefList').click(function () {
+		var race = 'Tiefling';
+		$('#race').text(race);
+		localStorage.setItem('charRace', race);
+		$('#dwarfList').remove();
+		$('#elfList').remove();
+		$('#humList').remove();
+		$('#tiefList').remove();
+		raceCount = 0;
+		$('#addDrop').removeAttr('data-dropdown-menu', '');
+		$(document).foundation();
+		$('#removeRace').removeClass();
+		$('#raceUL').removeClass();
+		randomImage();
+		stats();
+		var gender = localStorage.getItem('charGender');
+		var classDisplay = localStorage.getItem('charClass');
+
+		if (gender !== null) {
+			$('#femList').remove();
+			$('#maleList').remove();
+			genderCount = 0;
+			$('#addDrop').removeAttr('data-dropdown-menu', '');
+			$(document).foundation();
+			$('#removeGender').removeClass();
+			$('#genderUL').removeClass();
+		}
+		if (classDisplay !== null) {
+			$('#bardList').remove();
 			$('#cleList').remove();
 			$('#figList').remove();
 			$('#ranList').remove();
@@ -378,6 +443,7 @@ function editGenderRaceClass() {
 		var classDisplay = 'Cleric';
 		$('#class').text(classDisplay);
 		localStorage.setItem('charClass', classDisplay);
+		$('#bardList').remove();
 		$('#cleList').remove();
 		$('#figList').remove();
 		$('#ranList').remove();
@@ -407,6 +473,7 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();
@@ -420,6 +487,7 @@ function editGenderRaceClass() {
 		var classDisplay = 'Fighter';
 		$('#class').text(classDisplay);
 		localStorage.setItem('charClass', classDisplay);
+		$('#bardList').remove();
 		$('#cleList').remove();
 		$('#figList').remove();
 		$('#ranList').remove();
@@ -449,6 +517,7 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();
@@ -462,6 +531,7 @@ function editGenderRaceClass() {
 		var classDisplay = 'Ranger';
 		$('#class').text(classDisplay);
 		localStorage.setItem('charClass', classDisplay);
+		$('#bardList').remove();
 		$('#cleList').remove();
 		$('#figList').remove();
 		$('#ranList').remove();
@@ -490,6 +560,7 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();
@@ -503,6 +574,7 @@ function editGenderRaceClass() {
 		var classDisplay = 'Rogue';
 		$('#class').text(classDisplay);
 		localStorage.setItem('charClass', classDisplay);
+		$('#bardList').remove();
 		$('#cleList').remove();
 		$('#figList').remove();
 		$('#ranList').remove();
@@ -531,6 +603,7 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();
@@ -544,6 +617,7 @@ function editGenderRaceClass() {
 		var classDisplay = 'Wizard';
 		$('#class').text(classDisplay);
 		localStorage.setItem('charClass', classDisplay);
+		$('#bardList').remove();
 		$('#cleList').remove();
 		$('#figList').remove();
 		$('#ranList').remove();
@@ -572,6 +646,50 @@ function editGenderRaceClass() {
 			$('#dwarfList').remove();
 			$('#elfList').remove();
 			$('#humList').remove();
+			$('#tiefList').remove();
+			raceCount = 0;
+			$('#addDrop').removeAttr('data-dropdown-menu', '');
+			$(document).foundation();
+			$('#removeRace').removeClass();
+			$('#raceUL').removeClass();
+		}
+	});
+
+	// Displays and sets 'Bard' to localStorage on Click
+	$('#bardList').click(function () {
+		var classDisplay = 'Bard';
+		$('#class').text(classDisplay);
+		localStorage.setItem('charClass', classDisplay);
+		$('#bardList').remove();
+		$('#cleList').remove();
+		$('#figList').remove();
+		$('#ranList').remove();
+		$('#rogList').remove();
+		$('#wizList').remove();
+		classCount = 0;
+		$('#addDrop').removeAttr('data-dropdown-menu', '');
+		$(document).foundation();
+		$('#removeClass').removeClass();
+		$('#classUL').removeClass();
+		randomImage();
+		weaponsSpells();
+		stats();
+		var gender = localStorage.getItem('charGender');
+		var race = localStorage.getItem('charRace');
+		if (gender !== null) {
+			$('#femList').remove();
+			$('#maleList').remove();
+			genderCount = 0;
+			$('#addDrop').removeAttr('data-dropdown-menu', '');
+			$(document).foundation();
+			$('#removeGender').removeClass();
+			$('#genderUL').removeClass();
+		}
+		if (race !== null) {
+			$('#dwarfList').remove();
+			$('#elfList').remove();
+			$('#humList').remove();
+			$('#tiefList').remove();
 			raceCount = 0;
 			$('#addDrop').removeAttr('data-dropdown-menu', '');
 			$(document).foundation();

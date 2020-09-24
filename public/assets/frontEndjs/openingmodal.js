@@ -365,7 +365,11 @@ $(document).on('click', '.toModal6', function () {
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Either' && playerSelection[3] === 'Spells') {
+<<<<<<< HEAD
 		suggestion = 'Bard';
+=======
+		var suggestion = 'Bard';
+>>>>>>> dc2a211266898a17342d6efe4c23b905f260551a
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Far' && playerSelection[3] === 'Weapons') {

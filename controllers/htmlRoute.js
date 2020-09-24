@@ -23,7 +23,7 @@ router.get('/register', function (req, res) {
 	// If the user already has an account send them to the members page
 	if (req.user) {
 		// return res.redirect('/');
-		return res.render('index');
+		return res.render('indexmodal');
 	}
 	res.render('register', { layout: 'auth' });
 });
@@ -44,7 +44,7 @@ router.get('/login', function (req, res) {
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get('/', isAuthenticated, function (req, res) {
-	res.render('indexmodal');
+	res.render('index');
 });
 
 module.exports = router;
