@@ -3,11 +3,13 @@ $(document).foundation();
 //SPELLS AND EQUIPMENT HELP GUIDE MODALS
 
 function guideRender() {
+    console.log('renders guide');
     $("#equipment-guide").click(function () {
         
         event.preventDefault();
         $(document).foundation();
         var classEquip = localStorage.getItem("charClass");
+        console.log(classEquip);
 
     //--------WIZARD GUIDE--------
 
@@ -504,6 +506,139 @@ function guideRender() {
                 //Document functionality with Foundation
                 $(document).foundation();
                 $('#equipguide-modal5').foundation('open');
+        }
+
+        else if (classEquip === "Bard") {
+
+            //CREATES MODAL
+                // create a div for the modal
+                var equipModal3 = $('<div>');
+                // add class and ID for modal
+                $(equipModal3).addClass('reveal revealStyle');
+                $(equipModal3).attr('id', 'equipguide-modal3');
+                $(equipModal3).attr('data-reveal', '');
+                // append the modal div to mainbody
+                $('#mainBody').append(equipModal3);
+
+                var bardTitle = $('<h1>');
+                $(bardTitle).text("Bard Spells");
+                $(equipModal3).append(bardTitle);
+
+            //Healing Word
+                //create Title html element
+                var hwdTitle = $('<h2>');
+                // add text for the h2 tag
+                $(hwdTitle).text("Healing Word");
+                // append the modal to the div
+                $(equipModal3).append(hwdTitle);
+
+                //creates tags for description text
+                var hwdText = $('<p>');
+                $(hwdText).attr('id', 'hwd-text');
+                // add text for the p tag
+                $(hwdText).text(" ");
+                // append the modal to the div
+                $(equipModal3).append(hwdText);
+
+                //API "gets" spell info
+                var hwdescURL = "https://www.dnd5eapi.co/api/spells/healing-word";
+                $.ajax({
+                    url: hwdescURL,
+                    method: "GET"
+                }).then(function (hwdRes) {
+                    $("#hwd-text").text(hwdRes.desc)
+                });
+
+            //Vicious Mockery
+                //create Title html element
+                var vmdTitle = $('<h2>');
+                // add text for the h2 tag
+                $(vmdTitle).text("Vicious Mockery");
+                // append the modal to the div
+                $(equipModal3).append(vmdTitle);
+
+                //creates tags for description text
+                var vmdText = $('<p>');
+                $(vmdText).attr('id', 'vmd-text');
+                // add text for the p tag
+                $(vmdText).text(" ");
+                // append the modal to the div
+                $(equipModal3).append(vmdText);
+
+                //API "gets" spell info
+                var vmdescURL = "https://www.dnd5eapi.co/api/spells/vicious-mockery";
+                $.ajax({
+                    url: vmdescURL,
+                    method: "GET"
+                }).then(function (vmdRes) {
+                    $("#vmd-text").text(vmdRes.desc)
+                });
+
+                
+            //Charm Person
+                //create Title html element
+                var cpdTitle = $('<h2>');
+                // add text for the h2 tag
+                $(cpdTitle).text("Charm Person");
+                // append the modal to the div
+                $(equipModal3).append(cpdTitle);
+
+                //creates tags for description text
+                var cpdText = $('<p>');
+                $(cpdText).attr('id', 'cpd-text');
+                // add text for the p tag
+                $(cpdText).text(" ");
+                // append the modal to the div
+                $(equipModal3).append(cpdText);
+
+                //API "gets" spell info
+                var cpdescURL = "https://www.dnd5eapi.co/api/spells/charm-person";
+                $.ajax({
+                    url: cpdescURL,
+                    method: "GET"
+                }).then(function (cpdRes) {
+                    $("#cpd-text").text(cpdRes.desc)
+                });
+
+            //Hideous Laughter
+                //create Title html element
+                var hldTitle = $('<h2>');
+                // add text for the h2 tag
+                $(hldTitle).text("Hideous Laughter");
+                // append the modal to the div
+                $(equipModal3).append(hldTitle);
+
+                //creates tags for description text
+                var hldText = $('<p>');
+                $(hldText).attr('id', 'hld-text');
+                // add text for the p tag
+                $(hldText).text(" ");
+                // append the modal to the div
+                $(equipModal3).append(hldText);
+
+                //API "gets" spell info
+                var hldescURL = "https://www.dnd5eapi.co/api/spells/hideous-laughter";
+                $.ajax({
+                    url: hldescURL,
+                    method: "GET"
+                }).then(function (hldRes) {
+                    $("#hld-text").text(hldRes.desc)
+                });    
+
+            //CREATES CLOSE BUTTON
+                var eClose3 = $('<button>');
+                // add the class and attr for the button
+                $(eClose3).addClass('close-button');
+                $(eClose3).attr('data-close', '');
+                $(eClose3).attr('aria-label', 'Close reveal');
+                $(eClose3).attr('type', 'button');
+                // add the span for the close button
+                $(eClose3).html('<span aria-hidden="true">&times;</span>');
+                // append the button to the div
+                $(equipModal3).append(eClose3);
+                //Document functionality with Foundation
+                $(document).foundation();
+                $('#equipguide-modal3').foundation('open');
         }
     });
 }        

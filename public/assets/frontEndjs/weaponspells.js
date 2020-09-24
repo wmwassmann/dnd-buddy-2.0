@@ -153,8 +153,68 @@ function weaponsSpells() {
             $("#equipment-3").html("<h5>" + "Leather Armor" + "</h5>");
             $("#equipment-4").html(" ");
             $("#equipment-5").html(" ")
-        }
 
-//--------RENDERS GUIDES--------    
-        guideRender();
+        }else if (classEquip === "Bard") {
+
+            var healingWordURL = "https://www.dnd5eapi.co/api/spells/healing-word";
+            var viciousMockeryURL = "https://www.dnd5eapi.co/api/spells/vicious-mockery";
+            var charmPersonURL = "https://www.dnd5eapi.co/api/spells/charm-person";
+            var hideousLaughterURL = "https://www.dnd5eapi.co/api/spells/hideous-laughter";
+        
+        //HEALING WORD HTML
+            $.ajax({
+                url: healingWordURL,
+                method: "GET"
+            }).then(function (hwRes) {
+                $('#equipment-2').html("<h5>" + "Healing Word: (1d4) + (CHA modifier)" + "</h5>")
+                .append("Range: " + hwRes.range)
+                .append("<br />" + "Casting Time: " + hwRes.casting_time)
+                .append("<br />" + "Level: " + hwRes.level)
+            });
+        // VICEOUS MOCKERY HTML
+            $.ajax({
+                url: viciousMockeryURL,
+                method: "GET"
+            }).then(function (vmRes) {
+                $('#equipment-3').html("<h5>" + "Vicious Mockery: Target must succeed a WIS saving throw or take (1d4) and has disadvantage for its next attack roll." + "</h5>")
+                .append("Range: " + vmRes.range)
+                .append("<br />" + "Casting Time: " + vmRes.casting_time)
+                .append("<br />" + "Level: " + vmRes.level)
+            });
+        // CHARM PERSON HTML
+           $.ajax({
+            url: charmPersonURL,
+            method: "GET"
+        }).then(function (cpRes) {
+            $('#equipment-4').html("<h5>" + "Charm Person: Target Humanoid must succeed in a WIS saving throw. If it fails, it is your friend for the duration of the spell or until it is attacked." + "</h5>")
+            .append("Range: " + cpRes.range)
+            .append("<br />" + "Duration: " + cpRes.duration)
+            .append("<br />" + "Casting Time: " + cpRes.casting_time)
+            .append("<br />" + "Level: " + cpRes.level)
+        });    
+
+        // HIDEOUS LAUGHTER HTML
+         $.ajax({
+            url: hideousLaughterURL,
+            method: "GET"
+        }).then(function (hlRes) {
+            $('#equipment-5').html("<h5>" + "Hideous Laughter: Target Creature must succeed in a WIS saving throw or it falls prone, laughing until the spell ends." + "</h5>")
+            .append("Requires Concentration")
+            .append("<br />" + "Range: " + hlRes.range)
+            .append("<br />" + "Duration: " + hlRes.duration + " (10 Rounds)")
+            .append("<br />" + "Casting Time: " + hlRes.casting_time)
+            .append("<br />" + "Level: " + hlRes.level)
+        });    
+
+
+
+        //RAPIER
+            $("#equipment-1").html("<h5>" + "Rapier: 1d8 piercing damage" + "</h5>")
+        //LIGHT ARMOR   
+            .append("<h5>" + "Light Armor" + "</h5>")        
+          
+
+    }
+    //--------RENDERS GUIDES--------    
+    guideRender();
 }

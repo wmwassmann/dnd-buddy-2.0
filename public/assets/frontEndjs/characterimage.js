@@ -49,6 +49,18 @@ var fhro = [
 	'assets/img/images-female/human-rogue-2.png',
 	'assets/img/images-female/human-rogue-3.png',
 ];
+var mhb = [
+	'assets/img/images-male/human-bard-1.png',
+	'assets/img/images-male/human-bard-2.png',
+	'assets/img/images-male/human-bard-3.png',
+];
+var fhb = [
+	'assets/img/images-male/human-bard-1.png',
+	'assets/img/images-male/human-bard-2.png',
+	'assets/img/images-male/human-bard-3.png',
+];
+
+
 var mef = [
 	'assets/img/images-male/elf-fighter-1.png',
 	'assets/img/images-male/elf-fighter-2.png',
@@ -98,6 +110,16 @@ var fero = [
 	'assets/img/images-female/elf-rogue-1.png',
 	'assets/img/images-female/elf-rogue-2.png',
 	'assets/img/images-female/elf-rogue-3.png',
+];
+var meb = [
+	'assets/img/images-male/elf-bard-1.png',
+	'assets/img/images-male/elf-bard-2.png',
+	'assets/img/images-male/elf-bard-3.png',
+];
+var feb = [
+	'assets/img/images-male/elf-bard-1.png',
+	'assets/img/images-male/elf-bard-2.png',
+	'assets/img/images-male/elf-bard-3.png',
 ];
 var mdf = [
 	'assets/img/images-male/dwarf-fighter-1.png',
@@ -149,6 +171,78 @@ var fdro = [
 	'assets/img/images-female/dwarf-rogue-2.png',
 	'assets/img/images-female/dwarf-rogue-3.png',
 ];
+var mdb = [
+	'assets/img/images-male/dwarf-bard-1.png',
+	'assets/img/images-male/dwarf-bard-2.png',
+	'assets/img/images-male/dwarf-bard-3.png',
+];
+var fdb = [
+	'assets/img/images-female/dwarf-bard-1.png',
+	'assets/img/images-female/dwarf-bard-2.png',
+	'assets/img/images-female/dwarf-bard-3.png',
+];
+var mtf = [
+	'assets/img/images-male/Tiefling-fighter-1.png',
+	'assets/img/images-male/Tiefling-fighter-2.png',
+	'assets/img/images-male/Tiefling-fighter-3.png',
+];
+var ftf = [
+	'assets/img/images-female/Tiefling-fighter-1.png',
+	'assets/img/images-female/Tiefling-fighter-2.png',
+	'assets/img/images-female/Tiefling-fighter-3.png',
+];
+var mtra = [
+	'assets/img/images-male/Tiefling-ranger-1.png',
+	'assets/img/images-male/Tiefling-ranger-2.png',
+	'assets/img/images-male/Tiefling-ranger-3.png',
+];
+var ftra = [
+	'assets/img/images-female/Tiefling-ranger-1.png',
+	'assets/img/images-female/Tiefling-ranger-2.png',
+	'assets/img/images-female/Tiefling-ranger-3.png',
+];
+var mtm = [
+	'assets/img/images-male/Tiefling-mage-1.png',
+	'assets/img/images-male/Tiefling-mage-2.png',
+	'assets/img/images-male/Tiefling-mage-3.png',
+];
+var ftm = [
+	'assets/img/images-female/Tiefling-mage-1.png',
+	'assets/img/images-female/Tiefling-mage-2.png',
+	'assets/img/images-female/Tiefling-mage-3.png',
+];
+var mtc = [
+	'assets/img/images-male/Tiefling-cleric-1.png',
+	'assets/img/images-male/Tiefling-cleric-2.png',
+	'assets/img/images-male/Tiefling-cleric-3.png',
+];
+var ftc = [
+	'assets/img/images-female/Tiefling-cleric-1.png',
+	'assets/img/images-female/Tiefling-cleric-2.png',
+	'assets/img/images-female/Tiefling-cleric-3.png',
+];
+var mtro = [
+	'assets/img/images-male/Tiefling-rogue-1.png',
+	'assets/img/images-male/Tiefling-rogue-2.png',
+	'assets/img/images-male/Tiefling-rogue-3.png',
+];
+var ftro = [
+	'assets/img/images-female/Tiefling-rogue-1.png',
+	'assets/img/images-female/Tiefling-rogue-2.png',
+	'assets/img/images-female/Tiefling-rogue-3.png',
+];
+var mtb = [
+	'assets/img/images-male/Tiefling-bard-1.png',
+	'assets/img/images-male/Tiefling-bard-2.png',
+	'assets/img/images-male/Tiefling-bard-3.png',
+];
+var ftb = [
+	'assets/img/images-female/Tiefling-bard-1.png',
+	'assets/img/images-female/Tiefling-bard-2.png',
+	'assets/img/images-female/Tiefling-bard-3.png',
+];
+
+
 
 // Generates a random number which is called in each if statement
 function randomNumber(min, max) {
@@ -186,6 +280,10 @@ function randomImage() {
     else if (gender === 'Male' && race === 'Human' && classDisplay === 'Rogue') {
 		currentpicture = mhro[randomNumber(0, mhra.length)];
 		result.src = currentpicture;
+	} 
+	else if (gender === 'Male' && race === 'Human' && classDisplay === 'Bard') {
+		currentpicture = mhb[randomNumber(0, mhb.length)];
+		result.src = currentpicture;
     } 
 
     //Human Female If Statements
@@ -208,7 +306,11 @@ function randomImage() {
     else if (gender === 'Female' && race === 'Human' && classDisplay === 'Rogue') {
 		currentpicture = fhro[randomNumber(0, fhro.length)];
 		result.src = currentpicture;
-    }
+	}
+	else if (gender === 'Female' && race === 'Human' && classDisplay === 'Bard') {
+		currentpicture = fhb[randomNumber(0, fhb.length)];
+		result.src = currentpicture;
+    } 
     
     //Elf Male If Statements
     else if (gender === 'Male' && race === 'Elf' && classDisplay === 'Fighter') {
@@ -228,6 +330,10 @@ function randomImage() {
 		result.src = currentpicture;
 	} else if (gender === 'Male' && race === 'Elf' && classDisplay === 'Rogue') {
 		currentpicture = mero[randomNumber(0, mera.length)];
+		result.src = currentpicture;
+	} 
+	else if (gender === 'Male' && race === 'Elf' && classDisplay === 'Bard') {
+		currentpicture = meb[randomNumber(0, meb.length)];
 		result.src = currentpicture;
     } 
 
@@ -255,6 +361,11 @@ function randomImage() {
     else if (gender === 'Female' && race === 'Elf' && classDisplay === 'Rogue') {
 		currentpicture = fero[randomNumber(0, fero.length)];
 		result.src = currentpicture;
+	} 
+
+	else if (gender === 'Female' && race === 'Elf' && classDisplay === 'Bard') {
+		currentpicture = feb[randomNumber(0, feb.length)];
+		result.src = currentpicture;
     } 
 
     //Dwarf Male If Statements
@@ -281,7 +392,13 @@ function randomImage() {
     else if (gender === 'Male' && race === 'Dwarf' && classDisplay === 'Rogue') {
 		currentpicture = mdro[randomNumber(0, mdra.length)];
 		result.src = currentpicture;
-    }
+	}
+	
+	else if (gender === 'Male' && race === 'Dwarf' && classDisplay === 'Bard') {
+		currentpicture = mdb[randomNumber(0, mdb.length)];
+		result.src = currentpicture;
+    } 
+
 
 	//Dwarf Female If Statements
 	else if (gender === 'Female' && race === 'Dwarf' && classDisplay === 'Fighter') {
@@ -308,6 +425,73 @@ function randomImage() {
 		currentpicture = fdro[randomNumber(0, fdro.length)];
 		result.src = currentpicture;
 	}
+	else if (gender === 'Female' && race === 'Dwarf' && classDisplay === 'Bard') {
+		currentpicture = fdb[randomNumber(0, fdb.length)];
+		result.src = currentpicture;
+    } 
+
+
+
+	   //Tiefling Male If Statements
+	   else if (gender === 'Male' && race === 'Tiefling' && classDisplay === 'Fighter') {
+		currentpicture = mtf[randomNumber(0, mtf.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Male' && race === 'Tiefling' && classDisplay === 'Ranger') {
+		currentpicture = mtra[randomNumber(0, mtra.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Male' && race === 'Tiefling' && classDisplay === 'Wizard') {
+		currentpicture = mtw[randomNumber(0, mtw.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Male' && race === 'Tiefling' && classDisplay === 'Cleric') {
+		currentpicture = mtc[randomNumber(0, mtc.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Male' && race === 'Tiefling' && classDisplay === 'Rogue') {
+		currentpicture = mtro[randomNumber(0, mtro.length)];
+		result.src = currentpicture;
+	}
+	else if (gender === 'Male' && race === 'Tiefling' && classDisplay === 'Bard') {
+		currentpicture = mtb[randomNumber(0, mtb.length)];
+		result.src = currentpicture;
+    } 
+
+	//Tiefling Female If Statements
+	else if (gender === 'Female' && race === 'Tiefling' && classDisplay === 'Fighter') {
+		currentpicture = ftf[randomNumber(0, ftf.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Female' && race === 'Tiefling' && classDisplay === 'Ranger') {
+		currentpicture = ftra[randomNumber(0, ftra.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Female' && race === 'Tiefling' && classDisplay === 'Wizard') {
+		currentpicture = ftm[randomNumber(0, ftm.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Female' && race === 'Tiefling' && classDisplay === 'Cleric') {
+		currentpicture = ftc[randomNumber(0, ftc.length)];
+		result.src = currentpicture;
+    } 
+    
+    else if (gender === 'Female' && race === 'Tiefling' && classDisplay === 'Rogue') {
+		currentpicture = ftro[randomNumber(0, ftro.length)];
+		result.src = currentpicture;
+	}
+	else if (gender === 'Female' && race === 'Tiefling' && classDisplay === 'Bard') {
+		currentpicture = ftb[randomNumber(0, ftb.length)];
+		result.src = currentpicture;
+	}
+
 
 	//updates the src.URL to equal the image
 	$('#centerVidImg').attr('src', result.src);

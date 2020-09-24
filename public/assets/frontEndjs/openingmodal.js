@@ -71,7 +71,7 @@ $('#closeM1').click(function () {
 });
 
 // 2. Races modal
-$(document).on('click', '.toModal3', function () {
+$(document).on('click', '.toModal3', async function () {
 	event.preventDefault();
 	gender = $(this).attr('dataValue');
 	playerSelection.push(gender);
@@ -101,38 +101,99 @@ $(document).on('click', '.toModal3', function () {
 	// append the modal1h1 to the div
 	$(modal3).append(modal3p1);
 
-	// create a button tag for the answers
-	var modal3b1 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b1).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b1).attr('dataValue', 'Dwarf');
-	// add value for the button
-	$(modal3b1).text('Dwarf');
-	// append the button to the div
-	$(modal3).append(modal3b1);
+	// the async method
+	// need to add "async" in front of the "function" on line 74 where the modal start
+	// when using this method
+	const classArray = await gettheracelist();
+	console.log(classArray);
+	for (let i = 0; i < classArray.length; i++) {
+		let modelbtn = 'modal3b' + i;
+		// create a button tag for the answers
+		modelbtn = $('<button>');
+		// add the class and ID for the button
+		$(modelbtn).addClass('button revealButton toModal4');
+		// add the data value for the button
+		$(modelbtn).attr('dataValue', classArray[i]);
+		// add value for the button
+		$(modelbtn).text(classArray[i]);
+		// append the button to the div
+		$(modal3).append(modelbtn);
+	}
 
-	// create a button tag for the answers
-	var modal3b2 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b2).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b2).attr('dataValue', 'Elf');
-	// add value for the button
-	$(modal3b2).text('Elf');
-	// append the button to the div
-	$(modal3).append(modal3b2);
+	// the non async method
+	// $.get('/api/charrace', function (data) {
+	// 	for (let i = 0; i < data.length; i++) {
+	// 		let modelbtn = 'modal3b' + i;
+	// 		// create a button tag for the answers
+	// 		modelbtn = $('<button>');
+	// 		// add the class and ID for the button
+	// 		$(modelbtn).addClass('button revealButton toModal4');
+	// 		// add the data value for the button
+	// 		$(modelbtn).attr('dataValue', data[i].race);
+	// 		// add value for the button
+	// 		$(modelbtn).text(data[i].race);
+	// 		// append the button to the div
+	// 		$(modal3).append(modelbtn);
+	// 	}
+	// });
 
-	// create a button tag for the answers
-	var modal3b3 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b3).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b3).attr('dataValue', 'Human');
-	// add value for the button
-	$(modal3b3).text('Human');
-	// append the button to the div
-	$(modal3).append(modal3b3);
+	// for (let i = 0; i < classArray.length; i++) {
+	// 	const modelbtn = 'modal3b' + i;
+	// 	// create a button tag for the answers
+	// 	modelbtn = $('<button>');
+	// 	// add the class and ID for the button
+	// 	$(modelbtn).addClass('button revealButton toModal4');
+	// 	// add the data value for the button
+	// 	$(modelbtn).attr('dataValue', classArray[i]);
+	// 	// add value for the button
+	// 	$(modelbtn).text(classArray[i]);
+	// 	// append the button to the div
+	// 	$(modal3).append(modelbtn);
+	// }
+
+	// // create a button tag for the answers
+	// var modal3b1 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b1).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b1).attr('dataValue', 'Dwarf');
+	// // add value for the button
+	// $(modal3b1).text('Dwarf');
+	// // append the button to the div
+	// $(modal3).append(modal3b1);
+
+	// // create a button tag for the answers
+	// var modal3b2 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b2).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b2).attr('dataValue', 'Elf');
+	// // add value for the button
+	// $(modal3b2).text('Elf');
+	// // append the button to the div
+	// $(modal3).append(modal3b2);
+
+	// // create a button tag for the answers
+	// var modal3b3 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b3).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b3).attr('dataValue', 'Human');
+	// // add value for the button
+	// $(modal3b3).text('Human');
+	// // append the button to the div
+	// $(modal3).append(modal3b3);
+
+	// // create a button tag for the answers
+	// var modal3b4 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b4).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b4).attr('dataValue', 'Tiefling');
+	// // add value for the button
+	// $(modal3b4).text('Tiefling');
+	// // append the button to the div
+	// $(modal3).append(modal3b4);
 
 	// create a button tag for the close button
 	var modal3b4 = $('<button>');
@@ -153,7 +214,7 @@ $(document).on('click', '.toModal3', function () {
 	$('#Modal3').foundation('open');
 });
 
-// 3. Attrack Distance modal
+// 3. Attack Distance modal
 $(document).on('click', '.toModal4', function () {
 	event.preventDefault();
 	race = $(this).attr('dataValue');
@@ -314,8 +375,15 @@ $(document).on('click', '.toModal6', function () {
 	weapon = $(this).attr('dataValue');
 	playerSelection.push(weapon);
 
-	if (playerSelection[2] === 'Either') {
+	if (playerSelection[2] === 'Either' && playerSelection[3] === 'Weapons') {
 		var suggestion = 'Rogue';
+		playerSelection.push(suggestion);
+		saveToLocal(playerSelection);
+	} else if (
+		playerSelection[2] === 'Either' &&
+		playerSelection[3] === 'Spells'
+	) {
+		suggestion = 'Bard';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Far' && playerSelection[3] === 'Weapons') {
@@ -396,6 +464,7 @@ $(document).on('click', '.toModal6', function () {
 	// append the button to the div
 	$(modal6).append(modal6b2);
 	// Calls the image, weapons and stats to be generated
+	generateName();
 	randomImage();
 	weaponsSpells();
 	stats();

@@ -17,14 +17,34 @@ const passport = require('../config/passport-config');
 var isAuthenticated = require('../config/middleware/isAuthenticated');
 
 // Using the passport.authenticate middleware with our local strategy.
-// If the user has valid login credentials, send them to the members page.
+// If the user has valid login credentials, send them to the landing page.
 // Otherwise the user will be sent an error
 router.post('/api/login', passport.authenticate('local'), function (req, res) {
+	// console.log('api login run');
 	res.json({
 		email: req.user.email,
 		id: req.user.id,
 	});
 });
+
+// Using the passport.authenticate middleware with our local strategy.
+// If the user has valid login credentials, send them to the landing page with modal.
+// Otherwise the user will be sent an error
+router.post(
+	'/api/indexModal',
+	passport.authenticate('local', {
+		successRedirect: '/indexModal',
+		failureRedirect: '/login',
+		// failureFlash: true,
+	}),
+	function (req, res) {
+		// console.log('post api indexmodal am runninh');
+		res.json({
+			email: req.user.email,
+			id: req.user.id,
+		});
+	}
+);
 
 // Route for registering a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -35,8 +55,7 @@ router.post('/api/register', function (req, res) {
 		password: req.body.password,
 	})
 		.then(function () {
-			res.redirect(307, '/api/login');
-			// res.render('indexmodal')
+			res.redirect(307, '/api/indexModal');
 		})
 		.catch(function (err) {
 			res.status(401).json(err);
@@ -64,6 +83,7 @@ router.get('/api/user_data', function (req, res) {
 	}
 });
 
+// get the fullname list from database
 router.get('/api/charname', isAuthenticated, function (req, res) {
 	db.CharName.findAll({})
 		.then(function (charNameFullList) {
@@ -74,6 +94,29 @@ router.get('/api/charname', isAuthenticated, function (req, res) {
 		});
 });
 
+// get the full char class list from database
+router.get('/api/charclass', isAuthenticated, function (req, res) {
+	db.CharClass.findAll({})
+		.then(function (charClassFullList) {
+			res.json(charClassFullList);
+		})
+		.catch(function (err) {
+			res.status(500).json(err);
+		});
+});
+
+// get the full char race list from database
+router.get('/api/charrace', isAuthenticated, function (req, res) {
+	db.Race.findAll({})
+		.then(function (charRaceFullList) {
+			res.json(charRaceFullList);
+		})
+		.catch(function (err) {
+			res.status(500).json(err);
+		});
+});
+
+// get one specific random name from the database
 router.get('/api/charnameone', isAuthenticated, async function (req, res) {
 	// find the max row number from the charname table
 	const charNameTotal = await db.CharName.count({});
@@ -95,6 +138,75 @@ router.get('/api/charnameone', isAuthenticated, async function (req, res) {
 	// db.CharName.count({}).then(function (charNameCount) {
 	// 	res.json(charNameCount);
 	// });
+});
+
+// the api call for all the char data from the database to json
+router.get('/api/findCharByUserID', isAuthenticated, async function (req, res) {
+	const resultArray = [];
+	// locate the id from the user database
+	// console.log(req.user);
+	const userId = req.user.id;
+	// 1. find any char under this id
+	const findChar = await db.MainDatabase.findOne({
+		// include: [{ model: db.CharClass }],
+		where: { user_id: userId },
+	});
+	// console.log(findChar);
+	resultArray.push(findChar);
+	// res.json(findChar);
+
+	// 2. link up the charClass info
+	const findCharClass = await db.CharClass.findOne({
+		include: [
+			{
+				model: db.MainDatabase,
+				where: { user_id: userId },
+				attributes: ['id'],
+			},
+		],
+	});
+	// console.log(findCharClass);
+	resultArray.push(findCharClass);
+
+	// 3. link up the charrace info
+	const findCharRace = await db.Race.findOne({
+		include: [
+			{
+				model: db.MainDatabase,
+				where: { user_id: userId },
+				attributes: ['id'],
+			},
+		],
+	});
+	// console.log(findCharRace);
+	resultArray.push(findCharRace);
+
+	// 4. link up the weapon info
+	const findCharWeapon = await db.CharWeapon.findAll({
+		include: [
+			{
+				model: db.MainDatabase,
+				where: { user_id: userId },
+				attributes: ['id'],
+			},
+		],
+	});
+	// console.log(findCharWeapon);
+	resultArray.push(findCharWeapon);
+
+	// 5. link up the spell info
+	const findCharSpell = await db.CharSpell.findAll({
+		include: [
+			{
+				model: db.MainDatabase,
+				where: { user_id: userId },
+				attributes: ['id'],
+			},
+		],
+	});
+	// console.log(findCharSpell);
+	resultArray.push(findCharSpell);
+	res.json(resultArray);
 });
 
 module.exports = router;
