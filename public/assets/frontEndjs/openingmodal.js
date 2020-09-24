@@ -464,6 +464,7 @@ $(document).on('click', '.toModal6', function () {
 	// append the button to the div
 	$(modal6).append(modal6b2);
 	// Calls the image, weapons and stats to be generated
+	generateName();
 	randomImage();
 	weaponsSpells();
 	stats();
