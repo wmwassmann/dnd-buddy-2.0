@@ -90,9 +90,7 @@ function editGenderRaceClass() {
 	$('#removeGender').addClass('is-dropdown-submenu-parent opens-right');
 	$('#removeRace').addClass('is-dropdown-submenu-parent opens-right');
 	$('#removeClass').addClass('is-dropdown-submenu-parent opens-right');
-	$('#genderUL').addClass(
-		'menu submenu is-dropdown-submenu first-sub vertical'
-	);
+	$('#genderUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
 	$('#raceUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
 	$('#classUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
 
