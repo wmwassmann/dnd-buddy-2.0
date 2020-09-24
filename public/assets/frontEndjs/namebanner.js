@@ -1,5 +1,6 @@
 // Function to load character information from Local Storage if any exists
 $(window).on('load', function () {
+
 	// The function "sendCharInfoToLocal" serve for
 	// 1. loading the character data from database (**return null if not found)
 	// 2. get the name / gender / race / class from the maindatabase table (if the character exist)
@@ -7,38 +8,31 @@ $(window).on('load', function () {
 	sendCharInfoToLocal();
 
 	//If statement to check if Local Storage has charcater info
-	if (localStorage.charClass != null) {
+	// if (localStorage.charClass != null) {
 		//Get info from local storage
-		var name = localStorage.getItem('charName');
-		var gender = localStorage.getItem('charGender');
-		var race = localStorage.getItem('charRace');
-		var classDisplay = localStorage.getItem('charClass');
 
-		let displayGender = '';
-
-		//Display info to html
-		$('#characterName').text(name);
-		if (gender === 'M') {
-			displayGender = 'Male';
-		} else {
-			displayGender = 'Female';
-		}
-		$('#gender').text(displayGender);
-		$('#race').text(race);
-		$('#class').text(classDisplay);
 
 		//Calls functions to generate image, stats and weapons/skills
+
+	// } else {
+	// 	//Generates name and creates dropdown for Gender, Race and Class
+		// generateName();
+	// 	$('#gender').text('Gender');
+	// 	$('#race').text('Race');
+	// 	$('#class').text('Class');
+		// editGender();
+		// editRace();
+		// editClass();
 		weaponsSpells();
 		randomImage();
 		stats();
-	} else {
-		//Generates name and creates dropdown for Gender, Race and Class
-		generateName();
-		$('#gender').text('Gender');
-		$('#race').text('Race');
-		$('#class').text('Class');
-		editGenderRaceClass();
-	}
+
+		console.log('call 2')
+		console.log(race);
+		console.log(gender);
+		console.log(name);
+		console.log(classDisplay);
+	// }
 });
 
 // 	// Random Name API, ajax GET and Then function
@@ -191,7 +185,7 @@ function editClass() {
 	if (classCount === 0) {
 		$.get('/api/charclass', function (data) {
 			for (let i = 0; i < data.length; i++) {
-				let charCl = data[i].class;
+				let charCl = data[i].name;
 				let classList = $('<li>', {
 					text: charCl,
 					class: 'classDropdown',
@@ -206,6 +200,7 @@ function editClass() {
 						$('#classUL').removeClass();
 						randomImage();
 						stats();
+						weaponsSpells();
 					},
 				});
 				$('#classUL').append(classList);

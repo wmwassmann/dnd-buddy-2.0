@@ -4,7 +4,7 @@ const date = new Date();
 const inputData = [
 	[
 		'Hobert',
-		'M',
+		'Male',
 		'11',
 		'10',
 		'11',
@@ -20,7 +20,7 @@ const inputData = [
 	],
 	[
 		'Mary',
-		'F',
+		'Female',
 		'5',
 		'8',
 		'19',

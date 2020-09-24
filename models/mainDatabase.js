@@ -21,9 +21,9 @@ module.exports = function (sequelize, DataTypes) {
 				},
 			},
 			gender: {
-				type: DataTypes.STRING.BINARY,
+				type: DataTypes.STRING,
 				allowNull: false,
-				len: [1],
+				len: [1, 6],
 			},
 			level: {
 				type: DataTypes.INTEGER,

@@ -3,11 +3,13 @@ $(document).foundation();
 //SPELLS AND EQUIPMENT HELP GUIDE MODALS
 
 function guideRender() {
+    console.log('renders guide');
     $("#equipment-guide").click(function () {
         
         event.preventDefault();
         $(document).foundation();
         var classEquip = localStorage.getItem("charClass");
+        console.log(classEquip);
 
     //--------WIZARD GUIDE--------
 

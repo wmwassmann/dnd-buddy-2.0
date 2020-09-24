@@ -213,8 +213,8 @@ function weaponsSpells() {
         //LIGHT ARMOR   
             .append("<h5>" + "Light Armor" + "</h5>")        
           
-//--------RENDERS GUIDES--------    
-        guideRender();
-    }
 
+    }
+    //--------RENDERS GUIDES--------    
+    guideRender();
 }
