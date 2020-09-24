@@ -1,6 +1,5 @@
 // Function to load character information from Local Storage if any exists
 $(window).on('load', function () {
-
 	// The function "sendCharInfoToLocal" serve for
 	// 1. loading the character data from database (**return null if not found)
 	// 2. get the name / gender / race / class from the maindatabase table (if the character exist)
@@ -9,29 +8,28 @@ $(window).on('load', function () {
 
 	//If statement to check if Local Storage has charcater info
 	// if (localStorage.charClass != null) {
-		//Get info from local storage
+	//Get info from local storage
 
-
-		//Calls functions to generate image, stats and weapons/skills
+	//Calls functions to generate image, stats and weapons/skills
 
 	// } else {
 	// 	//Generates name and creates dropdown for Gender, Race and Class
-		// generateName();
+	// generateName();
 	// 	$('#gender').text('Gender');
 	// 	$('#race').text('Race');
 	// 	$('#class').text('Class');
-		// editGender();
-		// editRace();
-		// editClass();
-		weaponsSpells();
-		randomImage();
-		stats();
+	// editGender();
+	// editRace();
+	// editClass();
+	weaponsSpells();
+	randomImage();
+	stats();
 
-		console.log('call 2')
-		console.log(race);
-		console.log(gender);
-		console.log(name);
-		console.log(classDisplay);
+	console.log('call 2');
+	console.log(race);
+	console.log(gender);
+	console.log(name);
+	console.log(classDisplay);
 	// }
 });
 
