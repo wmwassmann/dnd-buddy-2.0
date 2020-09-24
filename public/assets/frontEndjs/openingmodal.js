@@ -379,16 +379,11 @@ $(document).on('click', '.toModal6', function () {
 		var suggestion = 'Rogue';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
-<<<<<<< HEAD
 	} else if (
 		playerSelection[2] === 'Either' &&
 		playerSelection[3] === 'Spells'
 	) {
-		var suggestion = 'Bard';
-=======
-	} else if (playerSelection[2] === 'Either' && playerSelection[3] === 'Spells') {
 		suggestion = 'Bard';
->>>>>>> ec3e0d93aff82e75d6247b303f21980cf75e9f73
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Far' && playerSelection[3] === 'Weapons') {
@@ -399,11 +394,17 @@ $(document).on('click', '.toModal6', function () {
 		suggestion = 'Wizard';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
-	} else if (playerSelection[2] === 'Close' && playerSelection[3] === 'Weapons') {
+	} else if (
+		playerSelection[2] === 'Close' &&
+		playerSelection[3] === 'Weapons'
+	) {
 		suggestion = 'Fighter';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
-	} else if (playerSelection[2] === 'Close' && playerSelection[3] === 'Spells') {
+	} else if (
+		playerSelection[2] === 'Close' &&
+		playerSelection[3] === 'Spells'
+	) {
 		suggestion = 'Cleric';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);

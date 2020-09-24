@@ -14,9 +14,16 @@ $(window).on('load', function () {
 		var race = localStorage.getItem('charRace');
 		var classDisplay = localStorage.getItem('charClass');
 
+		let displayGender = '';
+
 		//Display info to html
 		$('#characterName').text(name);
-		$('#gender').text(gender);
+		if (gender === 'M') {
+			displayGender = 'Male';
+		} else {
+			displayGender = 'Female';
+		}
+		$('#gender').text(displayGender);
 		$('#race').text(race);
 		$('#class').text(classDisplay);
 
@@ -83,7 +90,9 @@ function editGender() {
 	//Dynamically creates dropdown
 	$('#addDrop').attr('data-dropdown-menu', '');
 	$('#removeGender').addClass('is-dropdown-submenu-parent opens-right');
-	$('#genderUL').addClass('menu submenu is-dropdown-submenu first-sub vertical');
+	$('#genderUL').addClass(
+		'menu submenu is-dropdown-submenu first-sub vertical'
+	);
 
 	$(document).foundation();
 
@@ -102,7 +111,7 @@ function editGender() {
 
 		genderCount = genderCount + 1;
 	}
-	
+
 	// Displays and sets 'Female' to localStorage on Click
 	$('#femList').click(function () {
 		var gender = 'Female';
@@ -148,12 +157,12 @@ function editRace() {
 		$.get('/api/charrace', function (data) {
 			for (let i = 0; i < data.length; i++) {
 				let race = data[i].race;
-				let raceList = $("<li>", {
+				let raceList = $('<li>', {
 					text: race,
-					class: "raceDropdown",
+					class: 'raceDropdown',
 					click: function () {
 						localStorage.setItem('charRace', race);
-						$('#race').text(race)
+						$('#race').text(race);
 						$('.raceDropdown').remove();
 						raceCount = 0;
 						$('#addDrop').removeAttr('data-dropdown-menu', '');
@@ -162,10 +171,10 @@ function editRace() {
 						$('#raceUL').removeClass();
 						randomImage();
 						stats();
-					}
+					},
 				});
 				$('#raceUL').append(raceList);
-				raceCount ++;
+				raceCount++;
 			}
 		});
 	}
@@ -182,13 +191,13 @@ function editClass() {
 	if (classCount === 0) {
 		$.get('/api/charclass', function (data) {
 			for (let i = 0; i < data.length; i++) {
-				let charCl = data[i].class;
-				let classList = $("<li>", {
+				let charCl = data[i].name;
+				let classList = $('<li>', {
 					text: charCl,
-					class: "classDropdown",
+					class: 'classDropdown',
 					click: function () {
 						localStorage.setItem('charClass', charCl);
-						$('#class').text(charCl)
+						$('#class').text(charCl);
 						$('.classDropdown').remove();
 						classCount = 0;
 						$('#addDrop').removeAttr('data-dropdown-menu', '');
@@ -197,10 +206,10 @@ function editClass() {
 						$('#classUL').removeClass();
 						randomImage();
 						stats();
-					}
+					},
 				});
 				$('#classUL').append(classList);
-				classCount ++;
+				classCount++;
 			}
 		});
 	}
