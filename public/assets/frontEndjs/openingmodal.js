@@ -184,6 +184,17 @@ $(document).on('click', '.toModal3', async function () {
 	// // append the button to the div
 	// $(modal3).append(modal3b3);
 
+	// // create a button tag for the answers
+	// var modal3b4 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b4).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b4).attr('dataValue', 'Tiefling');
+	// // add value for the button
+	// $(modal3b4).text('Tiefling');
+	// // append the button to the div
+	// $(modal3).append(modal3b4);
+
 	// create a button tag for the close button
 	var modal3b4 = $('<button>');
 	// add the class and attr for the button
@@ -203,7 +214,7 @@ $(document).on('click', '.toModal3', async function () {
 	$('#Modal3').foundation('open');
 });
 
-// 3. Attrack Distance modal
+// 3. Attack Distance modal
 $(document).on('click', '.toModal4', function () {
 	event.preventDefault();
 	race = $(this).attr('dataValue');
@@ -368,11 +379,16 @@ $(document).on('click', '.toModal6', function () {
 		var suggestion = 'Rogue';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
+<<<<<<< HEAD
 	} else if (
 		playerSelection[2] === 'Either' &&
 		playerSelection[3] === 'Spells'
 	) {
 		var suggestion = 'Bard';
+=======
+	} else if (playerSelection[2] === 'Either' && playerSelection[3] === 'Spells') {
+		suggestion = 'Bard';
+>>>>>>> ec3e0d93aff82e75d6247b303f21980cf75e9f73
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Far' && playerSelection[3] === 'Weapons') {
@@ -383,17 +399,11 @@ $(document).on('click', '.toModal6', function () {
 		suggestion = 'Wizard';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
-	} else if (
-		playerSelection[2] === 'Close' &&
-		playerSelection[3] === 'Weapons'
-	) {
+	} else if (playerSelection[2] === 'Close' && playerSelection[3] === 'Weapons') {
 		suggestion = 'Fighter';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
-	} else if (
-		playerSelection[2] === 'Close' &&
-		playerSelection[3] === 'Spells'
-	) {
+	} else if (playerSelection[2] === 'Close' && playerSelection[3] === 'Spells') {
 		suggestion = 'Cleric';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
