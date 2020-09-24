@@ -347,8 +347,12 @@ $(document).on('click', '.toModal6', function () {
 	weapon = $(this).attr('dataValue');
 	playerSelection.push(weapon);
 
-	if (playerSelection[2] === 'Either') {
+	if (playerSelection[2] === 'Either' && playerSelection[3] === 'Weapons') {
 		var suggestion = 'Rogue';
+		playerSelection.push(suggestion);
+		saveToLocal(playerSelection);
+	} else if (playerSelection[2] === 'Either' && playerSelection[3] === 'Spells') {
+		var suggestion = 'Bard';
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Far' && playerSelection[3] === 'Weapons') {

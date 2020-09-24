@@ -344,6 +344,8 @@ Note: different border setup for the dice tray in small screen @media query (Par
 	font-family: 'Grenze Gotisch', cursive;
 	border-radius: 10px;
 	box-shadow: 0 0 0 0.2rem rgba(100, 100, 100, 0.5);
+	margin-top: 80px;
+	margin-bottom: 100px;
 }
 
 .revealStyle h1 {
