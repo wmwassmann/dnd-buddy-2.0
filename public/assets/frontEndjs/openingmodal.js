@@ -103,38 +103,71 @@ $(document).on('click', '.toModal3', function () {
 	// append the modal1h1 to the div
 	$(modal3).append(modal3p1);
 
-	// create a button tag for the answers
-	var modal3b1 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b1).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b1).attr('dataValue', 'Dwarf');
-	// add value for the button
-	$(modal3b1).text('Dwarf');
-	// append the button to the div
-	$(modal3).append(modal3b1);
+	// const classArray = await gettheracelist();
 
-	// create a button tag for the answers
-	var modal3b2 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b2).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b2).attr('dataValue', 'Elf');
-	// add value for the button
-	$(modal3b2).text('Elf');
-	// append the button to the div
-	$(modal3).append(modal3b2);
+	// console.log(classArray);
+	$.get('/api/charrace', function (data) {
+		for (let i = 0; i < data.length; i++) {
+			let modelbtn = 'modal3b' + i;
+			// create a button tag for the answers
+			modelbtn = $('<button>');
+			// add the class and ID for the button
+			$(modelbtn).addClass('button revealButton toModal4');
+			// add the data value for the button
+			$(modelbtn).attr('dataValue', data[i].race);
+			// add value for the button
+			$(modelbtn).text(data[i].race);
+			// append the button to the div
+			$(modal3).append(modelbtn);
+		}
+	});
 
-	// create a button tag for the answers
-	var modal3b3 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b3).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b3).attr('dataValue', 'Human');
-	// add value for the button
-	$(modal3b3).text('Human');
-	// append the button to the div
-	$(modal3).append(modal3b3);
+	// for (let i = 0; i < classArray.length; i++) {
+	// 	const modelbtn = 'modal3b' + i;
+	// 	// create a button tag for the answers
+	// 	modelbtn = $('<button>');
+	// 	// add the class and ID for the button
+	// 	$(modelbtn).addClass('button revealButton toModal4');
+	// 	// add the data value for the button
+	// 	$(modelbtn).attr('dataValue', classArray[i]);
+	// 	// add value for the button
+	// 	$(modelbtn).text(classArray[i]);
+	// 	// append the button to the div
+	// 	$(modal3).append(modelbtn);
+	// }
+
+	// // create a button tag for the answers
+	// var modal3b1 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b1).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b1).attr('dataValue', 'Dwarf');
+	// // add value for the button
+	// $(modal3b1).text('Dwarf');
+	// // append the button to the div
+	// $(modal3).append(modal3b1);
+
+	// // create a button tag for the answers
+	// var modal3b2 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b2).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b2).attr('dataValue', 'Elf');
+	// // add value for the button
+	// $(modal3b2).text('Elf');
+	// // append the button to the div
+	// $(modal3).append(modal3b2);
+
+	// // create a button tag for the answers
+	// var modal3b3 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b3).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b3).attr('dataValue', 'Human');
+	// // add value for the button
+	// $(modal3b3).text('Human');
+	// // append the button to the div
+	// $(modal3).append(modal3b3);
 
 	// create a button tag for the answers
 	var modal3b4 = $('<button>');

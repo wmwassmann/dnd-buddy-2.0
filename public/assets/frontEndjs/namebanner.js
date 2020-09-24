@@ -34,24 +34,24 @@ $(window).on('load', function () {
 });
 
 // Random Name Function
-function generateName() {
-	$.get('/api/charnameone', function (data) {
-		localStorage.setItem('charName', data.name);
-	});
+// function generateName() {
+// 	$.get('/api/charnameone', function (data) {
+// 		localStorage.setItem('charName', data.name);
+// 	});
 
-	// Random Name API, ajax GET and Then function
-	// var queryURL =
-	// 	'https://cors-anywhere.herokuapp.com/https://uzby.com/api.php?min=3&max=10';
+// 	// Random Name API, ajax GET and Then function
+// 	// var queryURL =
+// 	// 	'https://cors-anywhere.herokuapp.com/https://uzby.com/api.php?min=3&max=10';
 
-	// $.ajax({
-	// 	url: queryURL,
-	// 	method: 'GET',
-	// }).then(function (response) {
-	// 	console.log(response);
-	// 	$('#characterName').text(response);
-	// localStorage.setItem('charName', response);
-	// });
-}
+// 	// $.ajax({
+// 	// 	url: queryURL,
+// 	// 	method: 'GET',
+// 	// }).then(function (response) {
+// 	// 	console.log(response);
+// 	// 	$('#characterName').text(response);
+// 	// localStorage.setItem('charName', response);
+// 	// });
+// }
 
 //Function to edit Character Name
 function editName() {

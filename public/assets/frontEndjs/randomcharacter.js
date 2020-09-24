@@ -26,7 +26,11 @@ $('#toRandom').click(function () {
 		playerSelection[1] = 'Elf';
 	} else if (raceNum === 2) {
 		playerSelection[1] = 'Human';
+<<<<<<< HEAD
 	} else if (raceNum === 3) {
+=======
+	} else if (raceNum === 3) { 
+>>>>>>> 98051f7687161a39854c2c09718bce6196f166dc
 		playerSelection[1] = 'Tiefling';
 	}
 
@@ -44,7 +48,9 @@ $('#toRandom').click(function () {
 		playerSelection[4] = 'Ranger';
 	} else if (classNum === 5) {
 		playerSelection[4] = 'Wizard';
-    }
+    } else if (classNum === 5) {
+		playerSelection[4] = 'Bard';
+	}
     
     //Saves to localStorage
 	saveToLocal(playerSelection);
