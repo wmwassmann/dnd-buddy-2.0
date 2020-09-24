@@ -76,10 +76,8 @@ $(document).on('click', '.toModal3', function () {
 	gender = $(this).attr('dataValue');
 	playerSelection.push(gender);
 
-
-	for(var i=0; )
 	// create a div for the modal3
-	var modal3 + i = $('<div>');
+	var modal3 = $('<div>');
 	// add class and ID for modal3
 	$(modal3).addClass('reveal revealStyle');
 	$(modal3).attr('id', 'Modal3');
@@ -169,16 +167,16 @@ $(document).on('click', '.toModal3', function () {
 	// // append the button to the div
 	// $(modal3).append(modal3b3);
 
-	// create a button tag for the answers
-	var modal3b4 = $('<button>');
-	// add the class and ID for the button
-	$(modal3b4).addClass('button revealButton toModal4');
-	// add the data value for the button
-	$(modal3b4).attr('dataValue', 'Tiefling');
-	// add value for the button
-	$(modal3b4).text('Tiefling');
-	// append the button to the div
-	$(modal3).append(modal3b4);
+	// // create a button tag for the answers
+	// var modal3b4 = $('<button>');
+	// // add the class and ID for the button
+	// $(modal3b4).addClass('button revealButton toModal4');
+	// // add the data value for the button
+	// $(modal3b4).attr('dataValue', 'Tiefling');
+	// // add value for the button
+	// $(modal3b4).text('Tiefling');
+	// // append the button to the div
+	// $(modal3).append(modal3b4);
 
 	// create a button tag for the close button
 	var modal3b4 = $('<button>');
@@ -199,7 +197,7 @@ $(document).on('click', '.toModal3', function () {
 	$('#Modal3').foundation('open');
 });
 
-// 3. Attrack Distance modal
+// 3. Attack Distance modal
 $(document).on('click', '.toModal4', function () {
 	event.preventDefault();
 	race = $(this).attr('dataValue');
@@ -365,11 +363,7 @@ $(document).on('click', '.toModal6', function () {
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Either' && playerSelection[3] === 'Spells') {
-<<<<<<< HEAD
 		suggestion = 'Bard';
-=======
-		var suggestion = 'Bard';
->>>>>>> dc2a211266898a17342d6efe4c23b905f260551a
 		playerSelection.push(suggestion);
 		saveToLocal(playerSelection);
 	} else if (playerSelection[2] === 'Far' && playerSelection[3] === 'Weapons') {
