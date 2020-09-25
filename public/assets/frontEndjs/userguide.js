@@ -111,6 +111,18 @@ $("#index-user-guide").click(function () {
 	$(diceP).text("Click on any of the various sided dice to generate a random roll.");
 	// append the p to the div
 	$(userModal).append(diceP);
+
+	//Footer Navbar Guide
+	var bottomNav = $('<h2>');
+	// add text for the h2 tag
+	$(bottomNav).text('Offense, Defense, Utility, Role Play');
+	// append the h2 to the div
+	$(userModal).append(bottomNav);
+	var botNav = $('<p>');
+	// add text for the h2 tag
+	$(botNav).text('Click on any of these links to quickly navigate app and speed up play.');
+	// append the p to the div
+	$(userModal).append(botNav);
   
 	// create a button tag for the close button
 	var userClose = $('<button>');
@@ -270,14 +282,26 @@ $("#off-user-guide").click(function () {
 	//Dice Roller Guide
 	var diceRoller = $('<h2>');
 	// add text for the h2 tag
-	$(diceRoller).text("Dice");
+	$(diceRoller).text('Dice');
 	// append the h2 to the div
 	$(userModal).append(diceRoller);
 	var diceP = $('<p>');
 	// add text for the h2 tag
-	$(diceP).text("Click on any of the various sided dice to generate a random roll.");
+	$(diceP).text('Click on any of the various sided dice to generate a random roll.');
 	// append the p to the div
 	$(userModal).append(diceP);
+
+	//Footer Navbar Guide
+	var bottomNav = $('<h2>');
+	// add text for the h2 tag
+	$(bottomNav).text('Home, Defense, Utility, Role Play');
+	// append the h2 to the div
+	$(userModal).append(bottomNav);
+	var botNav = $('<p>');
+	// add text for the h2 tag
+	$(botNav).text('Click on any of these links to quickly navigate app and speed up play.');
+	// append the p to the div
+	$(userModal).append(botNav);
   
 	// create a button tag for the close button
 	var userClose = $('<button>');
@@ -402,6 +426,18 @@ $("#def-user-guide").click(function () {
 	$(diceP).text("Click on any of the various sided dice to generate a random roll.");
 	// append the p to the div
 	$(userModal).append(diceP);
+
+	//Footer Navbar Guide
+	var bottomNav = $('<h2>');
+	// add text for the h2 tag
+	$(bottomNav).text('Home, Offense, Utility, Role Play');
+	// append the h2 to the div
+	$(userModal).append(bottomNav);
+	var botNav = $('<p>');
+	// add text for the h2 tag
+	$(botNav).text('Click on any of these links to quickly navigate app and speed up play.');
+	// append the p to the div
+	$(userModal).append(botNav);
   
 	// create a button tag for the close button
 	var userClose = $('<button>');
@@ -514,6 +550,18 @@ $("#utl-user-guide").click(function () {
 	$(diceP).text("Click on any of the various sided dice to generate a random roll.");
 	// append the p to the div
 	$(userModal).append(diceP);
+
+	//Footer Navbar Guide
+	var bottomNav = $('<h2>');
+	// add text for the h2 tag
+	$(bottomNav).text('Home, Offense, Defense, Role Play');
+	// append the h2 to the div
+	$(userModal).append(bottomNav);
+	var botNav = $('<p>');
+	// add text for the h2 tag
+	$(botNav).text('Click on any of these links to quickly navigate app and speed up play.');
+	// append the p to the div
+	$(userModal).append(botNav);
   
 	// create a button tag for the close button
 	var userClose = $('<button>');
@@ -650,6 +698,18 @@ $("#rp-user-guide").click(function () {
 	$(diceP).text("Click on any of the various sided dice to generate a random roll.");
 	// append the p to the div
 	$(userModal).append(diceP);
+
+	//Footer Navbar Guide
+	var bottomNav = $('<h2>');
+	// add text for the h2 tag
+	$(bottomNav).text('Home, Offense, Defense, Utility');
+	// append the h2 to the div
+	$(userModal).append(bottomNav);
+	var botNav = $('<p>');
+	// add text for the h2 tag
+	$(botNav).text('Click on any of these links to quickly navigate app and speed up play.');
+	// append the p to the div
+	$(userModal).append(botNav);
   
 	// create a button tag for the close button
 	var userClose = $('<button>');
