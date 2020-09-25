@@ -28,16 +28,9 @@ function sendCharInfoToLocal() {
 		console.log(gender);
 		console.log(name);
 		console.log(classDisplay);
-		let displayGender = '';
 
-		//Display info to html
 		$('#characterName').text(name);
-		// if (gender === 'M') {
-		// 	displayGender = 'Male';
-		// } else {
-		// 	displayGender = 'Female';
-		// }
-		$('#gender').text(displayGender);
+		$('#gender').text(gender);
 		$('#race').text(race);
 		$('#class').text(classDisplay);
 		weaponsSpells();
