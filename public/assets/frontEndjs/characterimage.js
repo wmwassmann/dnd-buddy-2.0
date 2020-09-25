@@ -1,4 +1,5 @@
 // Arrays of character images
+// MALE HUMAN
 var mhf = [
 	'assets/img/images-male/human-fighter-1.png',
 	'assets/img/images-male/human-fighter-2.png',
@@ -24,6 +25,13 @@ var mhro = [
 	'assets/img/images-male/human-rogue-2.png',
 	'assets/img/images-male/human-rogue-3.png',
 ];
+var mhb = [
+	'assets/img/images-male/human-bard-1.png',
+	'assets/img/images-male/human-bard-2.png',
+	'assets/img/images-male/human-bard-3.png',
+];
+
+// FEMALE HUMAN
 var fhf = [
 	'assets/img/images-female/human-fighter-1.png',
 	'assets/img/images-female/human-fighter-2.png',
@@ -49,192 +57,198 @@ var fhro = [
 	'assets/img/images-female/human-rogue-2.png',
 	'assets/img/images-female/human-rogue-3.png',
 ];
-var mhb = [
-	'assets/img/images-male/human-bard-1.png',
-	'assets/img/images-male/human-bard-2.png',
-	'assets/img/images-male/human-bard-3.png',
-];
 var fhb = [
-	'assets/img/images-male/human-bard-1.png',
-	'assets/img/images-male/human-bard-2.png',
-	'assets/img/images-male/human-bard-3.png',
+	'assets/img/images-female/human-bard-1.png',
+	'assets/img/images-female/human-bard-2.png',
+	'assets/img/images-female/human-bard-3.png',
 ];
 
-
+// MALE ELF
 var mef = [
 	'assets/img/images-male/elf-fighter-1.png',
 	'assets/img/images-male/elf-fighter-2.png',
 	'assets/img/images-male/elf-fighter-3.png',
-];
-var fef = [
-	'assets/img/images-female/elf-fighter-1.png',
-	'assets/img/images-female/elf-fighter-2.png',
-	'assets/img/images-female/elf-fighter-3.png',
 ];
 var mera = [
 	'assets/img/images-male/elf-ranger-1.png',
 	'assets/img/images-male/elf-ranger-2.png',
 	'assets/img/images-male/elf-ranger-3.png',
 ];
-var fera = [
-	'assets/img/images-female/elf-ranger-1.png',
-	'assets/img/images-female/elf-ranger-2.png',
-	'assets/img/images-female/elf-ranger-3.png',
-];
 var mem = [
 	'assets/img/images-male/elf-mage-1.png',
 	'assets/img/images-male/elf-mage-2.png',
 	'assets/img/images-male/elf-mage-3.png',
-];
-var fem = [
-	'assets/img/images-female/elf-mage-1.png',
-	'assets/img/images-female/elf-mage-2.png',
-	'assets/img/images-female/elf-mage-3.png',
 ];
 var mec = [
 	'assets/img/images-male/elf-cleric-1.png',
 	'assets/img/images-male/elf-cleric-2.png',
 	'assets/img/images-male/elf-cleric-3.png',
 ];
-var fec = [
-	'assets/img/images-female/elf-cleric-1.png',
-	'assets/img/images-female/elf-cleric-2.png',
-	'assets/img/images-female/elf-cleric-3.png',
-];
 var mero = [
 	'assets/img/images-male/elf-rogue-1.png',
 	'assets/img/images-male/elf-rogue-2.png',
 	'assets/img/images-male/elf-rogue-3.png',
-];
-var fero = [
-	'assets/img/images-female/elf-rogue-1.png',
-	'assets/img/images-female/elf-rogue-2.png',
-	'assets/img/images-female/elf-rogue-3.png',
 ];
 var meb = [
 	'assets/img/images-male/elf-bard-1.png',
 	'assets/img/images-male/elf-bard-2.png',
 	'assets/img/images-male/elf-bard-3.png',
 ];
-var feb = [
-	'assets/img/images-male/elf-bard-1.png',
-	'assets/img/images-male/elf-bard-2.png',
-	'assets/img/images-male/elf-bard-3.png',
+
+// FEMALE ELF
+var fef = [
+	'assets/img/images-female/elf-fighter-1.png',
+	'assets/img/images-female/elf-fighter-2.png',
+	'assets/img/images-female/elf-fighter-3.png',
 ];
+var fera = [
+	'assets/img/images-female/elf-ranger-1.png',
+	'assets/img/images-female/elf-ranger-2.png',
+	'assets/img/images-female/elf-ranger-3.png',
+];
+var fem = [
+	'assets/img/images-female/elf-mage-1.png',
+	'assets/img/images-female/elf-mage-2.png',
+	'assets/img/images-female/elf-mage-3.png',
+];
+var fec = [
+	'assets/img/images-female/elf-cleric-1.png',
+	'assets/img/images-female/elf-cleric-2.png',
+	'assets/img/images-female/elf-cleric-3.png',
+];
+var fero = [
+	'assets/img/images-female/elf-rogue-1.png',
+	'assets/img/images-female/elf-rogue-2.png',
+	'assets/img/images-female/elf-rogue-3.png',
+];
+var feb = [
+	'assets/img/images-female/elf-bard-1.png',
+	'assets/img/images-female/elf-bard-2.png',
+	'assets/img/images-female/elf-bard-3.png',
+];
+
+// MALE DWARF
 var mdf = [
 	'assets/img/images-male/dwarf-fighter-1.png',
 	'assets/img/images-male/dwarf-fighter-2.png',
 	'assets/img/images-male/dwarf-fighter-3.png',
-];
-var fdf = [
-	'assets/img/images-female/dwarf-fighter-1.png',
-	'assets/img/images-female/dwarf-fighter-2.png',
-	'assets/img/images-female/dwarf-fighter-3.png',
 ];
 var mdra = [
 	'assets/img/images-male/dwarf-ranger-1.png',
 	'assets/img/images-male/dwarf-ranger-2.png',
 	'assets/img/images-male/dwarf-ranger-3.png',
 ];
-var fdra = [
-	'assets/img/images-female/dwarf-ranger-1.png',
-	'assets/img/images-female/dwarf-ranger-2.png',
-	'assets/img/images-female/dwarf-ranger-3.png',
-];
 var mdm = [
 	'assets/img/images-male/dwarf-mage-1.png',
 	'assets/img/images-male/dwarf-mage-2.png',
 	'assets/img/images-male/dwarf-mage-3.png',
-];
-var fdm = [
-	'assets/img/images-female/dwarf-mage-1.png',
-	'assets/img/images-female/dwarf-mage-2.png',
-	'assets/img/images-female/dwarf-mage-3.png',
 ];
 var mdc = [
 	'assets/img/images-male/dwarf-cleric-1.png',
 	'assets/img/images-male/dwarf-cleric-2.png',
 	'assets/img/images-male/dwarf-cleric-3.png',
 ];
-var fdc = [
-	'assets/img/images-female/dwarf-cleric-1.png',
-	'assets/img/images-female/dwarf-cleric-2.png',
-	'assets/img/images-female/dwarf-cleric-3.png',
-];
 var mdro = [
 	'assets/img/images-male/dwarf-rogue-1.png',
 	'assets/img/images-male/dwarf-rogue-2.png',
 	'assets/img/images-male/dwarf-rogue-3.png',
-];
-var fdro = [
-	'assets/img/images-female/dwarf-rogue-1.png',
-	'assets/img/images-female/dwarf-rogue-2.png',
-	'assets/img/images-female/dwarf-rogue-3.png',
 ];
 var mdb = [
 	'assets/img/images-male/dwarf-bard-1.png',
 	'assets/img/images-male/dwarf-bard-2.png',
 	'assets/img/images-male/dwarf-bard-3.png',
 ];
+
+// FEMALE DWARF
+var fdf = [
+	'assets/img/images-female/dwarf-fighter-1.png',
+	'assets/img/images-female/dwarf-fighter-2.png',
+	'assets/img/images-female/dwarf-fighter-3.png',
+];
+var fdra = [
+	'assets/img/images-female/dwarf-ranger-1.png',
+	'assets/img/images-female/dwarf-ranger-2.png',
+	'assets/img/images-female/dwarf-ranger-3.png',
+];
+var fdm = [
+	'assets/img/images-female/dwarf-mage-1.png',
+	'assets/img/images-female/dwarf-mage-2.png',
+	'assets/img/images-female/dwarf-mage-3.png',
+];
+var fdc = [
+	'assets/img/images-female/dwarf-cleric-1.png',
+	'assets/img/images-female/dwarf-cleric-2.png',
+	'assets/img/images-female/dwarf-cleric-3.png',
+];
+var fdro = [
+	'assets/img/images-female/dwarf-rogue-1.png',
+	'assets/img/images-female/dwarf-rogue-2.png',
+	'assets/img/images-female/dwarf-rogue-3.png',
+];
+
 var fdb = [
 	'assets/img/images-female/dwarf-bard-1.png',
 	'assets/img/images-female/dwarf-bard-2.png',
 	'assets/img/images-female/dwarf-bard-3.png',
 ];
+
+// MALE TIEFLING
 var mtf = [
 	'assets/img/images-male/Tiefling-fighter-1.png',
 	'assets/img/images-male/Tiefling-fighter-2.png',
 	'assets/img/images-male/Tiefling-fighter-3.png',
 ];
-var ftf = [
-	'assets/img/images-female/Tiefling-fighter-1.png',
-	'assets/img/images-female/Tiefling-fighter-2.png',
-	'assets/img/images-female/Tiefling-fighter-3.png',
+var mtw = [
+	'assets/img/images-male/Tiefling-mage-1.png',
+	'assets/img/images-male/Tiefling-mage-2.png',
+	'assets/img/images-male/Tiefling-mage-3.png',
 ];
 var mtra = [
 	'assets/img/images-male/Tiefling-ranger-1.png',
 	'assets/img/images-male/Tiefling-ranger-2.png',
 	'assets/img/images-male/Tiefling-ranger-3.png',
 ];
-var ftra = [
-	'assets/img/images-female/Tiefling-ranger-1.png',
-	'assets/img/images-female/Tiefling-ranger-2.png',
-	'assets/img/images-female/Tiefling-ranger-3.png',
-];
-var mtm = [
-	'assets/img/images-male/Tiefling-mage-1.png',
-	'assets/img/images-male/Tiefling-mage-2.png',
-	'assets/img/images-male/Tiefling-mage-3.png',
-];
-var ftm = [
-	'assets/img/images-female/Tiefling-mage-1.png',
-	'assets/img/images-female/Tiefling-mage-2.png',
-	'assets/img/images-female/Tiefling-mage-3.png',
-];
 var mtc = [
 	'assets/img/images-male/Tiefling-cleric-1.png',
 	'assets/img/images-male/Tiefling-cleric-2.png',
 	'assets/img/images-male/Tiefling-cleric-3.png',
-];
-var ftc = [
-	'assets/img/images-female/Tiefling-cleric-1.png',
-	'assets/img/images-female/Tiefling-cleric-2.png',
-	'assets/img/images-female/Tiefling-cleric-3.png',
 ];
 var mtro = [
 	'assets/img/images-male/Tiefling-rogue-1.png',
 	'assets/img/images-male/Tiefling-rogue-2.png',
 	'assets/img/images-male/Tiefling-rogue-3.png',
 ];
-var ftro = [
-	'assets/img/images-female/Tiefling-rogue-1.png',
-	'assets/img/images-female/Tiefling-rogue-2.png',
-	'assets/img/images-female/Tiefling-rogue-3.png',
-];
 var mtb = [
 	'assets/img/images-male/Tiefling-bard-1.png',
 	'assets/img/images-male/Tiefling-bard-2.png',
 	'assets/img/images-male/Tiefling-bard-3.png',
+];
+
+// FEMALE TIEFLING
+var ftf = [
+	'assets/img/images-female/Tiefling-fighter-1.png',
+	'assets/img/images-female/Tiefling-fighter-2.png',
+	'assets/img/images-female/Tiefling-fighter-3.png',
+];
+var ftra = [
+	'assets/img/images-female/Tiefling-ranger-1.png',
+	'assets/img/images-female/Tiefling-ranger-2.png',
+	'assets/img/images-female/Tiefling-ranger-3.png',
+];
+var ftm = [
+	'assets/img/images-female/Tiefling-mage-1.png',
+	'assets/img/images-female/Tiefling-mage-2.png',
+	'assets/img/images-female/Tiefling-mage-3.png',
+];
+var ftc = [
+	'assets/img/images-female/Tiefling-cleric-1.png',
+	'assets/img/images-female/Tiefling-cleric-2.png',
+	'assets/img/images-female/Tiefling-cleric-3.png',
+];
+var ftro = [
+	'assets/img/images-female/Tiefling-rogue-1.png',
+	'assets/img/images-female/Tiefling-rogue-2.png',
+	'assets/img/images-female/Tiefling-rogue-3.png',
 ];
 var ftb = [
 	'assets/img/images-female/Tiefling-bard-1.png',
