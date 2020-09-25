@@ -105,6 +105,7 @@ router.put('/api/save', async function (req, res, next) {
 	);
 });
 
+
 // Route for logging user out
 router.get('/logout', function (req, res) {
 	req.logout();

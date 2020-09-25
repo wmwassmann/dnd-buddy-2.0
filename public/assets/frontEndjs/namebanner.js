@@ -56,7 +56,10 @@ function editName() {
 		$(saveButton).attr('id', 'saveBtn');
 		$(saveButton).attr('type', 'button');
 		$(saveButton).addClass('button');
-		$('#characterName').append(saveButton);
+		$('#addDrop').append(saveButton);
+		$('#removeGender').hide();
+		$('#removeRace').hide();
+		$('#removeClass').hide();
 		count = count + 1;
 	}
 
@@ -64,6 +67,9 @@ function editName() {
 	$('#saveBtn').click(function () {
 		$('#characterName').attr('contenteditable', 'false');
 		$('#saveBtn').remove();
+		$('#removeGender').show();
+		$('#removeRace').show();
+		$('#removeClass').show();
 		response = $('#characterName').text();
 		localStorage.setItem('charName', response);
 		count = 0;
