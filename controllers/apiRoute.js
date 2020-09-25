@@ -38,7 +38,7 @@ router.post(
 		// failureFlash: true,
 	}),
 	function (req, res) {
-		// console.log('post api indexmodal am runninh');
+		// console.log('post api indexmodal am running');
 		res.json({
 			email: req.user.email,
 			id: req.user.id,
@@ -62,6 +62,26 @@ router.post('/api/register', function (req, res) {
 		});
 });
 
+// Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
+// Assign this route to the save button in the front end
+router.put('/api/save', function (req, res) {
+	console.log(req.body);
+	
+	// assign the value of the field on the doc that holds the race
+	// assign the value of the field on the doc that holds the name
+	// assign the value of the field on the doc that holds the class
+	// assign the value of the field on the doc that holds the gender
+	// other than male/female these should all be linked to an ID (ie if raceValue = Tiefling, ID = 4) that the database understands to be a particular value on their respective tables
+	// Then use that in a request to PUT those values to the maindatabase table, WHERE id = this user's id, to be read and re-displayed on the document later when this user logs in again
+	// {
+// 		char_class_id: id,
+// 		char_name_id: id,
+// 		char_race_id: id,
+// 		char_gender: male or female,
+// 	}
+	
+});
+
 // Route for logging user out
 router.get('/logout', function (req, res) {
 	req.logout();
@@ -83,7 +103,7 @@ router.get('/api/user_data', function (req, res) {
 	}
 });
 
-// get the fullname list from database
+// get the full name list from database
 router.get('/api/charname', isAuthenticated, function (req, res) {
 	db.CharName.findAll({})
 		.then(function (charNameFullList) {
@@ -120,7 +140,7 @@ router.get('/api/charrace', isAuthenticated, function (req, res) {
 router.get('/api/charnameone', isAuthenticated, async function (req, res) {
 	// find the max row number from the charname table
 	const charNameTotal = await db.CharName.count({});
-	// res.json for showing the result into the browser (commant it our because it can only show once in one get call)
+	// res.json for showing the result into the browser (comment it out because it can only show once in one get call)
 	// res.json(charNameTotal);
 	// console log the result
 	console.log(charNameTotal);
@@ -168,7 +188,7 @@ router.get('/api/findCharByUserID', isAuthenticated, async function (req, res) {
 	// console.log(findCharClass);
 	resultArray.push(findCharClass);
 
-	// 3. link up the charrace info
+	// 3. link up the charRace info
 	const findCharRace = await db.Race.findOne({
 		include: [
 			{

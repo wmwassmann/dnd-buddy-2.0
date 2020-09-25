@@ -21,9 +21,7 @@ $(window).on('load', function () {
 	// editGender();
 	// editRace();
 	// editClass();
-	weaponsSpells();
-	randomImage();
-	stats();
+
 
 	console.log('call 2');
 	console.log(race);

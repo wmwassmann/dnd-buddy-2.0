@@ -9,9 +9,9 @@ const bcrypt = require('bcryptjs');
 
 module.exports = function (sequelize, DataTypes) {
 	const User = sequelize.define(
-		// the following 'user' define the table name
+		// the following 'user' defines the table name
 		'User',
-		// the following object define each element inside this table
+		// the following object defines each element inside this table
 		{
 			// The email cannot be null, and must be a proper email before creation
 			email: {
