@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#saveBtn").on('click', function () {
+    $("#savetoDB").on('click', function () {
     let name = localStorage.getItem('charName');
     let race = localStorage.getItem('charRace');
 	let charClass = localStorage.getItem('charClass');
@@ -15,11 +15,18 @@ $(document).ready(function() {
         race = 4;
     };
 
-    updateName(name, race, charClass, charGender);
+    updateUserChar(name, race, charClass, charGender);
     });
 
+    //Logout button clears localstorage so a new user can login
+    $("#logout").on('click', function(){
+        console.log('logout works!');
+        localStorage.clear();
+        $(this).attr('href', "/logout");
+        $(this).click();
+    });
 
-    function updateName(name, race, charClass, charGender) {
+    function updateUserChar(name, race, charClass, charGender) {
         $.ajax({
             url: '/api/save',
             type: 'PUT',
