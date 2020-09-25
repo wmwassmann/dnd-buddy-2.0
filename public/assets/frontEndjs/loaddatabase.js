@@ -17,6 +17,7 @@ function sendCharInfoToLocal() {
 			localStorage.setItem('charGender', data[0].gender);
 			localStorage.setItem('charRace', data[2].race);
 			localStorage.setItem('charClass', data[1].name);
+			localStorage.setItem('charID', data[0].id);
 		}
 		var name = localStorage.getItem('charName');
 		var gender = localStorage.getItem('charGender');
