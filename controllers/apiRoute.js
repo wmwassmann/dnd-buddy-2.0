@@ -105,8 +105,8 @@ router.put('/api/save', async function (req, res, next) {
 			},
 		],
 	});
-	findCharClass.update(
-		{race: req.body.race_id},
+	findCharClass.CharClass.updateAttribute(
+		{name: req.body.char_class},
 	)
    });
 
