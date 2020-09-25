@@ -3,7 +3,7 @@ $(document).foundation();
 //SPELLS AND EQUIPMENT HELP GUIDE MODALS
 
 function guideRender() {
-    console.log('renders guide');
+    // console.log('renders guide');
     $("#equipment-guide").click(function () {
         
         event.preventDefault();
