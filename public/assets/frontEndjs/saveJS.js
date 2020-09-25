@@ -4,18 +4,18 @@ $(document).ready(function() {
     let race = localStorage.getItem('charRace');
 	let charClass = localStorage.getItem('charClass');
     let charGender = localStorage.getItem('charGender');
-    
-    if (race === 'Human') {
-        race = 1;
-    } else if (race === 'Dwarf') {
-        race = 2;
-    } else if (race === 'Elf') {
-        race = 3;
-    } else {
-        race = 4;
-    };
+    let charID = localStorage.getItem('charID');
+    // if (race === 'Human') {
+    //     race = 1;
+    // } else if (race === 'Dwarf') {
+    //     race = 2;
+    // } else if (race === 'Elf') {
+    //     race = 3;
+    // } else {
+    //     race = 4;
+    // };
 
-    updateUserChar(name, race, charClass, charGender);
+    updateUserChar(name, race, charClass, charGender, charID);
     });
 
     //Logout button clears localstorage so a new user can login
@@ -26,7 +26,7 @@ $(document).ready(function() {
         $(this).click();
     });
 
-    function updateUserChar(name, race, charClass, charGender) {
+    function updateUserChar(name, race, charClass, charGender, charID) {
         $.ajax({
             url: '/api/save',
             type: 'PUT',
@@ -35,6 +35,7 @@ $(document).ready(function() {
                 race_id: race,
                 char_class_id: charClass,
                 char_gender: charGender,
+                char_id: charID,
             },
           });
     };

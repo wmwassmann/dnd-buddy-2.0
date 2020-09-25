@@ -15,6 +15,7 @@ const passport = require('../config/passport-config');
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require('../config/middleware/isAuthenticated');
+const mainDatabase = require('../models/mainDatabase');
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the landing page.
@@ -64,23 +65,50 @@ router.post('/api/register', function (req, res) {
 
 // Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
 // Assign this route to the save button in the front end
-router.put('/api/save', function (req, res) {
+router.put('/api/save', async function (req, res, next) {
+	console.log('save database');
 	console.log(req.body);
-	
-	// assign the value of the field on the doc that holds the race
-	// assign the value of the field on the doc that holds the name
-	// assign the value of the field on the doc that holds the class
-	// assign the value of the field on the doc that holds the gender
-	// other than male/female these should all be linked to an ID (ie if raceValue = Tiefling, ID = 4) that the database understands to be a particular value on their respective tables
-	// Then use that in a request to PUT those values to the maindatabase table, WHERE id = this user's id, to be read and re-displayed on the document later when this user logs in again
-	// {
-// 		char_class_id: id,
-// 		char_name_id: id,
-// 		char_race_id: id,
-// 		char_gender: male or female,
-// 	}
-	
-});
+
+// url: '/api/save',
+// type: 'PUT',
+// data: {
+// 	char_name: name,
+// 	race_id: race,
+// 	char_class_id: charClass,
+// 	char_gender: charGender,
+	// db.CharClass.update({
+	// 	{race: req.body.race_id},
+	// 	{where: {
+	// 		id: req.body.char_id
+	// 	  }
+	// 	})
+	// })
+	db.MainDatabase.update(
+	  {name: req.body.char_name},
+	//   {race: req.body.race_id},
+	//   {class: req.body.char_class_id},
+	  {gender: req.body.char_gender},
+	  {where: {
+		id: req.body.char_id
+	  }
+	})
+	// .then(function(rowsUpdated) {
+	//   res.json(rowsUpdated)
+	// })
+	// .catch(next)
+	const findCharClass = await db.CharClass.findOne({
+		include: [
+			{
+				model: db.MainDatabase,
+				where: { id: req.body.char_id },
+				attributes: ['id'],
+			},
+		],
+	});
+	findCharClass.update(
+		{race: req.body.race_id},
+	)
+   });
 
 // Route for logging user out
 router.get('/logout', function (req, res) {
