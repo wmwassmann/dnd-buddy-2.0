@@ -20,7 +20,6 @@ $(document).ready(function () {
 
 	//Logout button clears localstorage so a new user can login
 	$('#logout').on('click', function () {
-		console.log('logout works!');
 		localStorage.clear();
 		$(this).attr('href', '/logout');
 		$(this).click();
