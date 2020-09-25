@@ -52,7 +52,7 @@ module.exports = {
 				language2: 'Infernal',
 				created_at: new Date(),
 				updated_at: new Date(),
-			},
+			}
 		]);
 	},
 
