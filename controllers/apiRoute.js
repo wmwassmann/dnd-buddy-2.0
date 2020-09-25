@@ -69,46 +69,41 @@ router.put('/api/save', async function (req, res, next) {
 	console.log('save database');
 	console.log(req.body);
 
-// url: '/api/save',
-// type: 'PUT',
-// data: {
-// 	char_name: name,
-// 	race_id: race,
-// 	char_class_id: charClass,
-// 	char_gender: charGender,
-	// db.CharClass.update({
-	// 	{race: req.body.race_id},
-	// 	{where: {
-	// 		id: req.body.char_id
-	// 	  }
-	// 	})
-	// })
-	db.MainDatabase.update(
-	  {name: req.body.char_name},
-	//   {race: req.body.race_id},
-	//   {class: req.body.char_class_id},
-	  {gender: req.body.char_gender},
-	  {where: {
-		id: req.body.char_id
-	  }
-	})
-	// .then(function(rowsUpdated) {
-	//   res.json(rowsUpdated)
-	// })
-	// .catch(next)
-	const findCharClass = await db.CharClass.findOne({
-		include: [
-			{
-				model: db.MainDatabase,
-				where: { id: req.body.char_id },
-				attributes: ['id'],
-			},
-		],
+	// find the new char class ID and put it in the maindatabase
+	const newcharClass = await db.CharClass.findOne({
+		where: {
+			name: req.body.char_class,
+		},
 	});
-	findCharClass.update(
-		{race: req.body.race_id},
-	)
-   });
+	const newCharClassID = newcharClass.dataValues.id;
+	console.log(newCharClassID);
+
+	// find the new race ID and put it in the maindatabase
+	const newRace = await db.Race.findOne({
+		where: {
+			race: req.body.race,
+		},
+	});
+	const newRaceID = newRace.dataValues.id;
+	console.log(newRaceID);
+
+	// update name / gender / char class / char race
+	await db.MainDatabase.update(
+		{
+			name: req.body.char_name,
+			gender: req.body.char_gender,
+			CharClassId: newCharClassID,
+			RaceId: newRaceID,
+		},
+		//   {race: req.body.race_id},
+		//   {class: req.body.char_class_id},
+		{
+			where: {
+				id: req.body.char_id,
+			},
+		}
+	);
+});
 
 // Route for logging user out
 router.get('/logout', function (req, res) {
