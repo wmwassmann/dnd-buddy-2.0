@@ -59,4 +59,36 @@ router.get('/indexModal', isAuthenticated, function (req, res) {
 	res.render('indexmodal');
 });
 
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+// this route is serve for the user to go to the DEFENSE PAGE FOR MOBILE SCREEN
+router.get('/defense', isAuthenticated, function (req, res) {
+	// console.log('indexmodal is running');
+	res.render('defense');
+});
+
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+// this route is serve for the user to go to the OFFENSE PAGE FOR MOBILE SCREEN
+router.get('/offense', isAuthenticated, function (req, res) {
+	// console.log('indexmodal is running');
+	res.render('offense');
+});
+
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+// this route is serve for the user to go to the ROLEPLAY PAGE FOR MOBILE SCREEN
+router.get('/roleplay', isAuthenticated, function (req, res) {
+	// console.log('indexmodal is running');
+	res.render('roleplay');
+});
+
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+// this route is serve for the user to go to the UTILITY PAGE FOR MOBILE SCREEN
+router.get('/utility', isAuthenticated, function (req, res) {
+	// console.log('indexmodal is running');
+	res.render('utility');
+});
+
 module.exports = router;

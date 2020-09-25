@@ -22,23 +22,21 @@ function sendCharInfoToLocal() {
 		var gender = localStorage.getItem('charGender');
 		var race = localStorage.getItem('charRace');
 		var classDisplay = localStorage.getItem('charClass');
-		
-		console.log('call 1')
+
+		console.log('call 1');
 		console.log(race);
 		console.log(gender);
 		console.log(name);
 		console.log(classDisplay);
 		let displayGender = '';
-	
-	
-	
+
 		//Display info to html
 		$('#characterName').text(name);
-		if (gender === 'M') {
-			displayGender = 'Male';
-		} else {
-			displayGender = 'Female';
-		}
+		// if (gender === 'M') {
+		// 	displayGender = 'Male';
+		// } else {
+		// 	displayGender = 'Female';
+		// }
 		$('#gender').text(displayGender);
 		$('#race').text(race);
 		$('#class').text(classDisplay);
@@ -46,18 +44,17 @@ function sendCharInfoToLocal() {
 		randomImage();
 		stats();
 	});
-
 }
 
 // 3. get the race list (ignore it)
-async function gettheracelist() {
-	console.log('racelist run');
-	console.log(data);
-	const response = await $.get('/api/charrace');
-	const result = [];
-	for (let i = 0; i < response.length; i++) {
-		result.push(response[i].race);
-	}
-	console.log(result);
-	return result;
-}
+// async function gettheracelist() {
+// 	console.log('racelist run');
+// 	console.log(data);
+// 	const response = await $.get('/api/charrace');
+// 	const result = [];
+// 	for (let i = 0; i < response.length; i++) {
+// 		result.push(response[i].race);
+// 	}
+// 	console.log(result);
+// 	return result;
+// }
