@@ -62,6 +62,26 @@ router.post('/api/register', function (req, res) {
 		});
 });
 
+// Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
+// Assign this route to the save button in the front end
+router.put('/api/save', function (req, res) {
+	console.log(req.body);
+	
+	// assign the value of the field on the doc that holds the race
+	// assign the value of the field on the doc that holds the name
+	// assign the value of the field on the doc that holds the class
+	// assign the value of the field on the doc that holds the gender
+	// other than male/female these should all be linked to an ID (ie if raceValue = Tiefling, ID = 4) that the database understands to be a particular value on their respective tables
+	// Then use that in a request to PUT those values to the maindatabase table, WHERE id = this user's id, to be read and re-displayed on the document later when this user logs in again
+	// {
+// 		char_class_id: id,
+// 		char_name_id: id,
+// 		char_race_id: id,
+// 		char_gender: male or female,
+// 	}
+	
+});
+
 // Route for logging user out
 router.get('/logout', function (req, res) {
 	req.logout();
