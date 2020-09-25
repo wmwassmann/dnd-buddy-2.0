@@ -21,7 +21,6 @@ const mainDatabase = require('../models/mainDatabase');
 // If the user has valid login credentials, send them to the landing page.
 // Otherwise the user will be sent an error
 router.post('/api/login', passport.authenticate('local'), function (req, res) {
-	// console.log('api login run');
 	res.json({
 		email: req.user.email,
 		id: req.user.id,
@@ -66,8 +65,9 @@ router.post('/api/register', function (req, res) {
 // Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
 // Assign this route to the save button in the front end
 router.put('/api/save', async function (req, res, next) {
-	console.log('save database');
-	console.log(req.body);
+	// ** Console logs for current and future testing
+	// console.log('save database');
+	// console.log(req.body);
 
 	// find the new char class ID and put it in the maindatabase
 	const newcharClass = await db.CharClass.findOne({
@@ -208,8 +208,11 @@ router.get('/api/charnameone', isAuthenticated, async function (req, res) {
 	// res.json for showing the result into the browser (comment it out because it can only show once in one get call)
 	// res.json(charNameTotal);
 	// console log the result
-	console.log(charNameTotal);
+	// console.log(charNameTotal);
+
+	// Use the total rows of character names to randomly pick a number from 1 through the total amount of names
 	const charRandomNum = Math.floor(Math.random() * charNameTotal + 1);
+	// Use sequelize to find the a name based on an ID that matches the randomly generated number above
 	await db.CharName.findOne({
 		where: { id: charRandomNum },
 	})
@@ -219,6 +222,7 @@ router.get('/api/charnameone', isAuthenticated, async function (req, res) {
 		.catch(function (err) {
 			res.status(500).json(err);
 		});
+		
 	// function for solely get the respone to json (reference only)
 	// db.CharName.count({}).then(function (charNameCount) {
 	// 	res.json(charNameCount);
