@@ -95,8 +95,6 @@ router.put('/api/save', async function (req, res, next) {
 			CharClassId: newCharClassID,
 			RaceId: newRaceID,
 		},
-		//   {race: req.body.race_id},
-		//   {class: req.body.char_class_id},
 		{
 			where: {
 				id: req.body.char_id,
@@ -105,6 +103,49 @@ router.put('/api/save', async function (req, res, next) {
 	);
 });
 
+// Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
+// Assign this route to the save button in the front end
+router.put('/api/saveANewChar', async function (req, res, next) {
+	console.log('saving A New Char');
+	console.log(req.body);
+
+	// find the new char class ID and put it in the maindatabase
+	const newcharClass = await db.CharClass.findOne({
+		where: {
+			name: req.body.char_class,
+		},
+	});
+	const newCharClassID = newcharClass.dataValues.id;
+	console.log(newCharClassID);
+
+	// find the new race ID and put it in the maindatabase
+	const newRace = await db.Race.findOne({
+		where: {
+			race: req.body.race,
+		},
+	});
+	const newRaceID = newRace.dataValues.id;
+	console.log(newRaceID);
+
+	// update name / gender / char class / char race
+	await db.MainDatabase.create({
+		name: req.body.char_name,
+		gender: req.body.char_gender,
+		CharClassId: newCharClassID,
+		RaceId: newRaceID,
+		// now all the value hardcode as zero
+		// the value will be read after the frontend.js is ready
+		level: 0,
+		stat_str: 0,
+		stat_dex: 0,
+		stat_con: 0,
+		stat_int: 0,
+		stat_wis: 0,
+		stat_cha: 0,
+		stat_hp: 0,
+		stat_ac: 0,
+	});
+});
 
 // Route for logging user out
 router.get('/logout', function (req, res) {

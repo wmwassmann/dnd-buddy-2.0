@@ -1,9 +1,25 @@
-// 1. Random Name Function
+// 1a. Random Name Function
 function generateName() {
 	$.get('/api/charnameone', function (data) {
 		// console.log('randnname run');
 		// console.log(data);
 		localStorage.setItem('charName', data.name);
+	});
+}
+
+// 1b. Random Name Function (first time user when they have not finish the modal)
+// the reason for building this funciton is to faciliate the user to pop out from the modal in the middle
+function generateNameFirstTime() {
+	$.get('/api/charnameone', function (data) {
+		console.log('randnname run');
+		console.log(data);
+		localStorage.setItem('charName', data.name);
+		$('#characterName').text(data.name);
+		$('#gender').text('Gender');
+		$('#race').text('Race');
+		$('#class').text('Class');
+		weaponsSpells();
+		stats();
 	});
 }
 
@@ -18,6 +34,8 @@ function sendCharInfoToLocal() {
 			localStorage.setItem('charRace', data[2].race);
 			localStorage.setItem('charClass', data[1].name);
 			localStorage.setItem('charID', data[0].id);
+		} else {
+			generateNameFirstTime();
 		}
 		var name = localStorage.getItem('charName');
 		var gender = localStorage.getItem('charGender');
