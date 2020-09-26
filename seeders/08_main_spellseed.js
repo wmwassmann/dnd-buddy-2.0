@@ -20,13 +20,13 @@ module.exports = {
 				updated_at: date,
 			});
 		}
-		await queryInterface.bulkInsert('main_spell', inputarray, {
+		await queryInterface.bulkInsert('Main_spell', inputarray, {
 			validate: true,
 			ignoreDuplicates: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete('main_spell', null, {});
+		await queryInterface.bulkDelete('Main_spell', null, {});
 	},
 };

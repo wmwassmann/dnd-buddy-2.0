@@ -375,15 +375,13 @@ Note: different border setup for the dice tray in small screen @media query (Par
 }
 
 .navbar-light .navbar-brand {
-	color: wheat!important;
+	color: wheat !important;
 }
 .navbar-light .navbar-brand:hover {
-	color: orange!important;
-	
+	color: orange !important;
 }
 .navbar-light .navbar-brand:active {
-	color: blue!important;
-	
+	color: blue !important;
 }
 
 .fixed-bottom {
@@ -392,6 +390,10 @@ Note: different border setup for the dice tray in small screen @media query (Par
 
 .computer {
 	display: none;
+}
+
+.logout-button {
+	margin-right: 5px;
 }
 
 /* end of part 6 */

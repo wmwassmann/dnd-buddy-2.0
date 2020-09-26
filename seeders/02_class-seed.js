@@ -14,13 +14,13 @@ module.exports = {
 			});
 		}
 
-		await queryInterface.bulkInsert('charClass', inputarray, {
+		await queryInterface.bulkInsert('CharClass', inputarray, {
 			validate: true,
 			ignoreDuplicates: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete('charClass', null, {});
+		await queryInterface.bulkDelete('CharClass', null, {});
 	},
 };

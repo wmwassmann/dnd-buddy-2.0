@@ -34,7 +34,7 @@ $("#index-user-guide").click(function () {
 	$(navCharSetup).text("Character Setup");
 	// append the h2 to the div
 	$(userModal).append(navCharSetup);
-	var bannerNameP = $('<p>');
+	var navCharSetupP = $('<p>');
 	// add text for the h2 tag
 	$(navCharSetupP).text("To initialize the character setup questionnaire click on Character Setup in the Navigation Bar.");
 	// append the p to the div
@@ -138,7 +138,7 @@ $("#index-user-guide").click(function () {
 
 	//Document functionality with Foundation
 	$(document).foundation();
-	$('#user-modal').foundation('open');
+	$(userModal).foundation('open');
 });	
 
 $("#off-user-guide").click(function () {
@@ -317,7 +317,7 @@ $("#off-user-guide").click(function () {
 
 	//Document functionality with Foundation
 	$(document).foundation();
-	$('#user-modal').foundation('open');
+	$(userModal).foundation('open');
 });	
 
 $("#def-user-guide").click(function () {
@@ -453,7 +453,7 @@ $("#def-user-guide").click(function () {
 
 	//Document functionality with Foundation
 	$(document).foundation();
-	$('#user-modal').foundation('open');
+	$(userModal).foundation('open');
 });	
 
 $("#utl-user-guide").click(function () {
@@ -577,7 +577,7 @@ $("#utl-user-guide").click(function () {
 
 	//Document functionality with Foundation
 	$(document).foundation();
-	$('#user-modal').foundation('open');
+	$(userModal).foundation('open');
 });	
 
 $("#rp-user-guide").click(function () {
@@ -725,5 +725,5 @@ $("#rp-user-guide").click(function () {
 
 	//Document functionality with Foundation
 	$(document).foundation();
-	$('#user-modal').foundation('open');
+	$(userModal).foundation('open');
 });	

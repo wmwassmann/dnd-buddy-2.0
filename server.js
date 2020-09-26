@@ -36,14 +36,14 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Set the route
-const htmlRoute = require('../dnd-buddy-2.0/controllers/htmlRoute');
-const apiRoute = require('../dnd-buddy-2.0/controllers/apiRoute');
+const htmlRoute = require('./controllers/htmlRoute');
+const apiRoute = require('./controllers/apiRoute');
 
 app.use(apiRoute);
 app.use(htmlRoute);
 
 // sync the sequelize model
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
 	app.listen(PORT, function () {
 		console.log('App listening on PORT ' + PORT);
 	});

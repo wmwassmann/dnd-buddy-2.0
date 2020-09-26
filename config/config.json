@@ -1,9 +1,9 @@
 {
 	"development": {
-		"username": "root",
-		"password": "password",
-		"database": "dndbuddy",
-		"host": "127.0.0.1",
+		"username": "mivsaxq2v11apeow",
+		"password": "qolsqhscwb0umwkd",
+		"database": "xzsjues04q3secjr",
+		"host": "sm9j2j5q6c8bpgyq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
 		"dialect": "mysql"
 	},
 	"test": {
@@ -14,10 +14,7 @@
 		"dialect": "mysql"
 	},
 	"production": {
-		"username": "root",
-		"password": "password",
-		"database": "dndbuddy",
-		"host": "127.0.0.1",
+		"use_env_variable": "JAWSDB_URL",
 		"dialect": "mysql"
 	}
 }

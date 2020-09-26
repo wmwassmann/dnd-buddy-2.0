@@ -135,13 +135,13 @@ module.exports = {
 			});
 		}
 
-		await queryInterface.bulkInsert('charSpell', inputarray, {
+		await queryInterface.bulkInsert('CharSpell', inputarray, {
 			validate: true,
 			ignoreDuplicates: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete('charSpell', null, {});
+		await queryInterface.bulkDelete('CharSpell', null, {});
 	},
 };
