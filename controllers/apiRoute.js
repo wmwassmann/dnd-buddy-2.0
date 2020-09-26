@@ -10,6 +10,7 @@ const router = express.Router();
 // Import the model (index.js) to use its database functions.
 const db = require('../models');
 
+const date = new Date();
 // Import passport model for its function
 const passport = require('../config/passport-config');
 
@@ -65,7 +66,7 @@ router.post('/api/register', function (req, res) {
 
 // Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
 // Assign this route to the save button in the front end
-router.put('/api/save', async function (req, res, next) {
+router.put('/api/save', isAuthenticated, async function (req, res, next) {
 	console.log('save database');
 	console.log(req.body);
 
@@ -105,7 +106,7 @@ router.put('/api/save', async function (req, res, next) {
 
 // Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
 // Assign this route to the save button in the front end
-router.put('/api/saveANewChar', async function (req, res, next) {
+router.post('/api/saveANewChar', async function (req, res, next) {
 	console.log('saving A New Char');
 	console.log(req.body);
 
@@ -133,6 +134,9 @@ router.put('/api/saveANewChar', async function (req, res, next) {
 		gender: req.body.char_gender,
 		CharClassId: newCharClassID,
 		RaceId: newRaceID,
+		userID: req.user.id,
+		created_at: date,
+		updated_at: date,
 		// now all the value hardcode as zero
 		// the value will be read after the frontend.js is ready
 		level: 0,
