@@ -43,24 +43,45 @@ $(document).ready(function () {
 		$(logoutModal).append(logoutDesc2);
 
 		// LOGOUT BUTTONS
-		var logoutBtn1 = $('<button>');
-		$(logoutBtn1).text("Save and Logout");
-		var logoutBtn2 = $('<button>');
-		$(logoutBtn2).text("Logout without Saving");
-		var logoutBtn3 = $('<button>');
-		$(logoutBtn3).text("Cancel");
+		let logoutBtn1 = $('<button>', {
+			text: 'Save and Logout',
+			class: 'logout-button',
+			click: function () {
+				let name = localStorage.getItem('charName');
+				let race = localStorage.getItem('charRace');
+				let charClass = localStorage.getItem('charClass');
+				let charGender = localStorage.getItem('charGender');
+				let charID = localStorage.getItem('charID');
+				console.log(charID);
+				if (charID === null) {
+					createUserChar(name, race, charClass, charGender);
+				} else {
+					updateUserChar(name, race, charClass, charGender, charID);
+				}
+				localStorage.clear();
+				$('#logout').attr('href', '/logout');
+				$('#logoutModal').foundation('close');
+			}
+		});
+		let logoutBtn2 = $('<button>', {
+			text: 'Logout without Saving',
+			class: 'logout-button',
+			click: function () {
+				localStorage.clear();
+				$('#logout').attr('href', '/logout');
+				$('#logoutModal').foundation('close');
+			}
+		});
+		let logoutBtn3 = $('<button>', {
+			text: 'Cancel',
+			class: 'logout-button',
+			click: function () {
+				$('#logoutModal').foundation('close');
+			}
+		});
 		$(logoutModal).append(logoutBtn1);
 		$(logoutModal).append(logoutBtn2);
 		$(logoutModal).append(logoutBtn3);
-
-
-
-		// console.log('logout works!');
-		localStorage.clear();
-		$(this).attr('href', '/logout');
-		$(this).click();
-
-
 	});
 
 	// update the user data with the existing character
