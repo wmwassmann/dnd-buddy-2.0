@@ -109,6 +109,8 @@ router.post('/api/saveANewChar', async function (req, res, next) {
 	console.log('saving A New Char');
 	console.log(req.body);
 
+	// find the user id
+	const userID = req.user.id;
 	// find the new char class ID and put it in the maindatabase
 	const newcharClass = await db.CharClass.findOne({
 		where: {
@@ -133,7 +135,7 @@ router.post('/api/saveANewChar', async function (req, res, next) {
 		gender: req.body.char_gender,
 		CharClassId: newCharClassID,
 		RaceId: newRaceID,
-		userID: req.user.id,
+		UserId: userID,
 		created_at: date,
 		updated_at: date,
 		// now all the value hardcode as zero

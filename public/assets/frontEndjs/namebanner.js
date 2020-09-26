@@ -122,7 +122,6 @@ function editGender() {
 		$('#genderUL').removeClass();
 		randomImage();
 		stats();
-		mobileStats();
 	});
 
 	// Displays and sets 'Male' to localStorage on Click
@@ -139,7 +138,6 @@ function editGender() {
 		$('#genderUL').removeClass();
 		randomImage();
 		stats();
-		mobileStats();
 	});
 }
 
@@ -169,7 +167,6 @@ function editRace() {
 						$('#raceUL').removeClass();
 						randomImage();
 						stats();
-						mobileStats();
 					},
 				});
 				$('#raceUL').append(raceList);
@@ -206,7 +203,6 @@ function editClass() {
 						randomImage();
 						stats();
 						weaponsSpells();
-						mobileStats();
 					},
 				});
 				$('#classUL').append(classList);

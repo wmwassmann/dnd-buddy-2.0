@@ -7,6 +7,7 @@ function getRandomInt(max) {
 }
 
 //Click event when the user picks random
+//Click event when the user picks random
 $('#toRandom').click(function () {
 	event.preventDefault();
 
@@ -45,17 +46,16 @@ $('#toRandom').click(function () {
 	} else if (classNum === 5) {
 		playerSelection[4] = 'Wizard';
 	}
-    
-    //Saves to localStorage
-	saveToLocal(playerSelection);
-	
-	// Calls the image, weapon and stats to be generated
-		generateName();
-        randomImage();
-        weaponsSpells();
-		stats();
 
-    // close modal1
-		$('#Modal1').foundation('close');
-		
+	//Saves to localStorage
+	saveToLocal(playerSelection);
+
+	// Calls the image, weapon and stats to be generated
+	generateName();
+	randomImage();
+	weaponsSpells();
+	stats();
+
+	// close modal1
+	$('#Modal1').foundation('close');
 });
