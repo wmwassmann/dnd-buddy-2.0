@@ -102,7 +102,7 @@ $(document).on('click', '.toModal3', function () {
 	$(modal3).append(modal3p1);
 
 	// the async method
-	// need to add "async" in front of the "function" on line 74 where the modal start
+	// need to add 'async' in front of the 'function' on line 74 where the modal start
 	// when using this method
 	// const classArray = await gettheracelist();
 	// console.log(classArray);
@@ -431,15 +431,7 @@ $(document).on('click', '.toModal6', function () {
 	// add class and ID for modal3
 	$(modal6p1).addClass('lead');
 	// add text for the h1 tag
-	$(modal6p1).text(
-		'You should be a "' +
-			playerSelection[0] +
-			', ' +
-			playerSelection[1] +
-			', ' +
-			playerSelection[4] +
-			' "'
-	);
+	$(modal6p1).text('You should be a ' + playerSelection[0] + ', ' + playerSelection[1] + ', ' + playerSelection[4] +'.');
 	// append the modal4h1 to the div
 	$(modal6).append(modal6p1);
 
