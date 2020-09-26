@@ -4,6 +4,7 @@ function generateName() {
 		// console.log('randnname run');
 		// console.log(data);
 		localStorage.setItem('charName', data.name);
+		$('#characterName').text(data.name);
 	});
 }
 
