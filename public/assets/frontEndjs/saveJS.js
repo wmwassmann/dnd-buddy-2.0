@@ -5,6 +5,7 @@ $(document).ready(function () {
 		let charClass = localStorage.getItem('charClass');
 		let charGender = localStorage.getItem('charGender');
 		let charID = localStorage.getItem('charID');
+		console.log(charID);
 		if (charID === null) {
 			createUserChar(name, race, charClass, charGender);
 		} else {
