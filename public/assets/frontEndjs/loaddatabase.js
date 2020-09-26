@@ -1,8 +1,8 @@
 // 1a. Random Name Function
 function generateName() {
 	$.get('/api/charnameone', function (data) {
-		console.log('randnname run');
-		console.log(data);
+		// console.log('randnname run');
+		// console.log(data);
 		localStorage.setItem('charName', data.name);
 		$('#characterName').text(data.name);
 	});
@@ -27,8 +27,8 @@ function generateNameFirstTime() {
 // 2. Send the gender / race / class to localStroage
 function sendCharInfoToLocal() {
 	$.get('api/findCharByUserID', function (data) {
-		console.log('sendcharInfo run');
-		console.log(data);
+		// console.log('sendcharInfo run');
+		// console.log(data);
 		if (data[0] != null) {
 			localStorage.setItem('charName', data[0].name);
 			localStorage.setItem('charGender', data[0].gender);
@@ -43,11 +43,11 @@ function sendCharInfoToLocal() {
 		var race = localStorage.getItem('charRace');
 		var classDisplay = localStorage.getItem('charClass');
 
-		console.log('call 1');
-		console.log(race);
-		console.log(gender);
-		console.log(name);
-		console.log(classDisplay);
+		// console.log('call 1');
+		// console.log(race);
+		// console.log(gender);
+		// console.log(name);
+		// console.log(classDisplay);
 
 		$('#characterName').text(name);
 		$('#gender').text(gender);

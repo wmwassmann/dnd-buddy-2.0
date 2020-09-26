@@ -23,11 +23,11 @@ $(window).on('load', function () {
 	// editClass();
 
 
-	console.log('call 2');
-	console.log(race);
-	console.log(gender);
-	console.log(name);
-	console.log(classDisplay);
+	// console.log('call 2');
+	// console.log(race);
+	// console.log(gender);
+	// console.log(name);
+	// console.log(classDisplay);
 	// }
 });
 
