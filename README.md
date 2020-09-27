@@ -55,17 +55,39 @@ D&D Buddy contains the following features:
     3. Guides will provide game definitions to assist beginners with campaign play as well as guides to how the site functions which all users may find beneficial to help them navigate our site.
 
 # Screenshots
+# Version 2.0 
+
+Desktop:
+
+![screenshotlg](public\assets/img/front-end-images/desktop-main.PNG?raw=true)
+
+iPad:
+
+![screenshotmd](public\assets/img/front-end-images/ipad-med.PNG?raw=true)
+
+Small Mobile (iPhone6/7/8): 
+
+![screenshotlg](public\assets/img/front-end-images/mobile-models.PNG?raw=true)
+
+
+<br>
+<br>
+<br>
+
+# Version 1.0 
+
 Large Screen:
 
-![screenshotlg](assets/front-end-images/screenshot_large.PNG?raw=true)
+![screenshotlg](public\assets/img/front-end-images/screenshot_large.PNG?raw=true)
 
 Medium Screen:
 
-![screenshotmd](assets/front-end-images/screenshot_medium.PNG?raw=true)
+![screenshotmd](public\assets/img/front-end-images/screenshot_medium.PNG?raw=true)
 
 Small Screen:
 
-![screenshotsm](assets/front-end-images/screenshot_small.PNG?raw=true)
+![screenshotsm](public\assets/img/front-end-images/screenshot_small.PNG?raw=true)
+
 
 # Code Style
 Standard
