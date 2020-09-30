@@ -15,7 +15,7 @@
 # General Info
 This project quickly and simpily builds a Dungeons and Dragons character sheet, which can be saved and stored so players can access their character across devices and browsers.  The site is designed for all types of Dungeons and Dragons players.  Simple enough for first time players with all the features an experienced player would need.
 
-**Please visit [https://wmwassmann.github.io/dndbuddy-1/](https://wmwassmann.github.io/dndbuddy-1/) for the site.**
+**Please visit [https://wmwassmann.github.io/dnd-buddy-2.0/](https://wmwassmann.github.io/dnd-buddy-2.0/) for the site.**
 
 For the feature of the site, please visit the [Features](#features) section for more details.
 
