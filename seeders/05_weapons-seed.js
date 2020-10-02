@@ -181,13 +181,13 @@ module.exports = {
 			});
 		}
 
-		await queryInterface.bulkInsert('charWeapon', inputarray, {
+		await queryInterface.bulkInsert('CharWeapon', inputarray, {
 			validate: true,
 			ignoreDuplicates: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete('charWeapon', null, {});
+		await queryInterface.bulkDelete('CharWeapon', null, {});
 	},
 };

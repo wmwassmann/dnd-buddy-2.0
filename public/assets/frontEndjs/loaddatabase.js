@@ -29,19 +29,30 @@ function sendCharInfoToLocal() {
 	$.get('api/findCharByUserID', function (data) {
 		// console.log('sendcharInfo run');
 		// console.log(data);
+		var name = localStorage.getItem('charName');
+		var gender = localStorage.getItem('charGender');
+		var race = localStorage.getItem('charRace');
+		var classDisplay = localStorage.getItem('charClass');
+
 		if (data[0] != null) {
 			localStorage.setItem('charName', data[0].name);
 			localStorage.setItem('charGender', data[0].gender);
 			localStorage.setItem('charRace', data[2].race);
 			localStorage.setItem('charClass', data[1].name);
 			localStorage.setItem('charID', data[0].id);
+		} else if (name) {
+			name = localStorage.getItem('charName');
+			gender = localStorage.getItem('charGender');
+			race = localStorage.getItem('charRace');
+			classDisplay = localStorage.getItem('charClass');
 		} else {
 			generateNameFirstTime();
 		}
-		var name = localStorage.getItem('charName');
-		var gender = localStorage.getItem('charGender');
-		var race = localStorage.getItem('charRace');
-		var classDisplay = localStorage.getItem('charClass');
+
+		name = localStorage.getItem('charName');
+		gender = localStorage.getItem('charGender');
+		race = localStorage.getItem('charRace');
+		classDisplay = localStorage.getItem('charClass');
 
 		// console.log('call 1');
 		// console.log(race);
@@ -56,7 +67,6 @@ function sendCharInfoToLocal() {
 		weaponsSpells();
 		randomImage();
 		stats();
-		mobileStats();
 	});
 }
 

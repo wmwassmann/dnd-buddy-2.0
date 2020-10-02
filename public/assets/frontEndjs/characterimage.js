@@ -194,66 +194,66 @@ var fdb = [
 
 // MALE TIEFLING
 var mtf = [
-	'assets/img/images-male/Tiefling-fighter-1.png',
-	'assets/img/images-male/Tiefling-fighter-2.png',
-	'assets/img/images-male/Tiefling-fighter-3.png',
+	'assets/img/images-male/tiefling-fighter-1.png',
+	'assets/img/images-male/tiefling-fighter-2.png',
+	'assets/img/images-male/tiefling-fighter-3.png',
 ];
 var mtw = [
-	'assets/img/images-male/Tiefling-mage-1.png',
-	'assets/img/images-male/Tiefling-mage-2.png',
-	'assets/img/images-male/Tiefling-mage-3.png',
+	'assets/img/images-male/tiefling-mage-1.png',
+	'assets/img/images-male/tiefling-mage-2.png',
+	'assets/img/images-male/tiefling-mage-3.png',
 ];
 var mtra = [
-	'assets/img/images-male/Tiefling-ranger-1.png',
-	'assets/img/images-male/Tiefling-ranger-2.png',
-	'assets/img/images-male/Tiefling-ranger-3.png',
+	'assets/img/images-male/tiefling-ranger-1.png',
+	'assets/img/images-male/tiefling-ranger-2.png',
+	'assets/img/images-male/tiefling-ranger-3.png',
 ];
 var mtc = [
-	'assets/img/images-male/Tiefling-cleric-1.png',
-	'assets/img/images-male/Tiefling-cleric-2.png',
-	'assets/img/images-male/Tiefling-cleric-3.png',
+	'assets/img/images-male/tiefling-cleric-1.png',
+	'assets/img/images-male/tiefling-cleric-2.png',
+	'assets/img/images-male/tiefling-cleric-3.png',
 ];
 var mtro = [
-	'assets/img/images-male/Tiefling-rogue-1.png',
-	'assets/img/images-male/Tiefling-rogue-2.png',
-	'assets/img/images-male/Tiefling-rogue-3.png',
+	'assets/img/images-male/tiefling-rogue-1.png',
+	'assets/img/images-male/tiefling-rogue-2.png',
+	'assets/img/images-male/tiefling-rogue-3.png',
 ];
 var mtb = [
-	'assets/img/images-male/Tiefling-bard-1.png',
-	'assets/img/images-male/Tiefling-bard-2.png',
-	'assets/img/images-male/Tiefling-bard-3.png',
+	'assets/img/images-male/tiefling-bard-1.png',
+	'assets/img/images-male/tiefling-bard-2.png',
+	'assets/img/images-male/tiefling-bard-3.png',
 ];
 
 // FEMALE TIEFLING
 var ftf = [
-	'assets/img/images-female/Tiefling-fighter-1.png',
-	'assets/img/images-female/Tiefling-fighter-2.png',
-	'assets/img/images-female/Tiefling-fighter-3.png',
+	'assets/img/images-female/tiefling-fighter-1.png',
+	'assets/img/images-female/tiefling-fighter-2.png',
+	'assets/img/images-female/tiefling-fighter-3.png',
 ];
 var ftra = [
-	'assets/img/images-female/Tiefling-ranger-1.png',
-	'assets/img/images-female/Tiefling-ranger-2.png',
-	'assets/img/images-female/Tiefling-ranger-3.png',
+	'assets/img/images-female/tiefling-ranger-1.png',
+	'assets/img/images-female/tiefling-ranger-2.png',
+	'assets/img/images-female/tiefling-ranger-3.png',
 ];
 var ftm = [
-	'assets/img/images-female/Tiefling-mage-1.png',
-	'assets/img/images-female/Tiefling-mage-2.png',
-	'assets/img/images-female/Tiefling-mage-3.png',
+	'assets/img/images-female/tiefling-mage-1.png',
+	'assets/img/images-female/tiefling-mage-2.png',
+	'assets/img/images-female/tiefling-mage-3.png',
 ];
 var ftc = [
-	'assets/img/images-female/Tiefling-cleric-1.png',
-	'assets/img/images-female/Tiefling-cleric-2.png',
-	'assets/img/images-female/Tiefling-cleric-3.png',
+	'assets/img/images-female/tiefling-cleric-1.png',
+	'assets/img/images-female/tiefling-cleric-2.png',
+	'assets/img/images-female/tiefling-cleric-3.png',
 ];
 var ftro = [
-	'assets/img/images-female/Tiefling-rogue-1.png',
-	'assets/img/images-female/Tiefling-rogue-2.png',
-	'assets/img/images-female/Tiefling-rogue-3.png',
+	'assets/img/images-female/tiefling-rogue-1.png',
+	'assets/img/images-female/tiefling-rogue-2.png',
+	'assets/img/images-female/tiefling-rogue-3.png',
 ];
 var ftb = [
-	'assets/img/images-female/Tiefling-bard-1.png',
-	'assets/img/images-female/Tiefling-bard-2.png',
-	'assets/img/images-female/Tiefling-bard-3.png',
+	'assets/img/images-female/tiefling-bard-1.png',
+	'assets/img/images-female/tiefling-bard-2.png',
+	'assets/img/images-female/tiefling-bard-3.png',
 ];
 
 

@@ -59,13 +59,13 @@ module.exports = {
 				updated_at: date,
 			});
 		}
-		await queryInterface.bulkInsert('mainDatabase', inputarray, {
+		await queryInterface.bulkInsert('MainDatabase', inputarray, {
 			validate: true,
 			ignoreDuplicates: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.bulkDelete('mainDatabase', null, {});
+		await queryInterface.bulkDelete('MainDatabase', null, {});
 	},
 };
