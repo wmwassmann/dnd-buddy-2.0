@@ -1,13 +1,13 @@
 'use strict';
 // This charClass.js server for:
 //  1. define the setup of the table in the database
-//  2. define the type and set the restriction for all the variable under charClass
+//  2. define the type and set the restriction for all the variable under Class
 //  3. define the forgine key relationship (if any)
-//  4. export the charClass table to the database
+//  4. export the Class table to the database
 
 module.exports = function (sequelize, DataTypes) {
 	const MainDatabase = sequelize.define(
-		// the following 'charClass' define the table name
+		// the following 'Class' define the table name
 		'MainDatabase',
 		// the following object define each element inside this table
 		{
@@ -93,11 +93,11 @@ module.exports = function (sequelize, DataTypes) {
 				allowNull: false,
 			},
 		});
-	};
+	}
 
 	// 2. maindatabase and class - (one to many relationship)
 	MainDatabase.associate = function (models) {
-		MainDatabase.belongsTo(models.charClass, {
+		MainDatabase.belongsTo(models.Class, {
 			foreignKey: {
 				allowNull: false,
 			},

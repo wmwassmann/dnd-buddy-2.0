@@ -63,20 +63,20 @@ router.post('/api/register', function (req, res) {
 		});
 });
 
-// Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
+// Route for the save button to save charname/Class/charrace/chargender to the user's ID in the database
 // Assign this route to the save button in the front end
 router.put('/api/save', isAuthenticated, async function (req, res, next) {
 	console.log('save database');
 	console.log(req.body);
 
 	// find the new char class ID and put it in the maindatabase
-	const newcharClass = await db.CharClass.findOne({
+	const newClass = await db.Class.findOne({
 		where: {
 			name: req.body.char_class,
 		},
 	});
-	const newCharClassID = newcharClass.dataValues.id;
-	console.log(newCharClassID);
+	const newClassID = newClass.dataValues.id;
+	console.log(newClassID);
 
 	// find the new race ID and put it in the maindatabase
 	const newRace = await db.Race.findOne({
@@ -92,7 +92,7 @@ router.put('/api/save', isAuthenticated, async function (req, res, next) {
 		{
 			name: req.body.char_name,
 			gender: req.body.char_gender,
-			CharClassId: newCharClassID,
+			ClassId: newClassID,
 			RaceId: newRaceID,
 		},
 		{
@@ -103,7 +103,7 @@ router.put('/api/save', isAuthenticated, async function (req, res, next) {
 	);
 });
 
-// Route for the save button to save charname/charclass/charrace/chargender to the user's ID in the database
+// Route for the save button to save charname/Class/charrace/chargender to the user's ID in the database
 // Assign this route to the save button in the front end
 router.post('/api/saveANewChar', async function (req, res, next) {
 	console.log('saving A New Char');
@@ -112,13 +112,13 @@ router.post('/api/saveANewChar', async function (req, res, next) {
 	// find the user id
 	const userID = req.user.id;
 	// find the new char class ID and put it in the maindatabase
-	const newcharClass = await db.CharClass.findOne({
+	const newClass = await db.Class.findOne({
 		where: {
 			name: req.body.char_class,
 		},
 	});
-	const newCharClassID = newcharClass.dataValues.id;
-	console.log(newCharClassID);
+	const newClassID = newClass.dataValues.id;
+	console.log(newClassID);
 
 	// find the new race ID and put it in the maindatabase
 	const newRace = await db.Race.findOne({
@@ -133,7 +133,7 @@ router.post('/api/saveANewChar', async function (req, res, next) {
 	await db.MainDatabase.create({
 		name: req.body.char_name,
 		gender: req.body.char_gender,
-		CharClassId: newCharClassID,
+		ClassId: newClassID,
 		RaceId: newRaceID,
 		UserId: userID,
 		created_at: date,
@@ -185,10 +185,10 @@ router.get('/api/charname', isAuthenticated, function (req, res) {
 });
 
 // get the full char class list from database
-router.get('/api/charclass', isAuthenticated, function (req, res) {
-	db.CharClass.findAll({})
-		.then(function (charClassFullList) {
-			res.json(charClassFullList);
+router.get('/api/Class', isAuthenticated, function (req, res) {
+	db.Class.findAll({})
+		.then(function (ClassFullList) {
+			res.json(ClassFullList);
 		})
 		.catch(function (err) {
 			res.status(500).json(err);
@@ -242,15 +242,15 @@ router.get('/api/findCharByUserID', isAuthenticated, async function (req, res) {
 	const userId = req.user.id;
 	// 1. find any char under this id
 	const findChar = await db.MainDatabase.findOne({
-		// include: [{ model: db.CharClass }],
+		// include: [{ model: db.Class }],
 		where: { user_id: userId },
 	});
 	// console.log(findChar);
 	resultArray.push(findChar);
 	// res.json(findChar);
 
-	// 2. link up the charClass info
-	const findCharClass = await db.CharClass.findOne({
+	// 2. link up the Class info
+	const findClass = await db.Class.findOne({
 		include: [
 			{
 				model: db.MainDatabase,
@@ -259,8 +259,8 @@ router.get('/api/findCharByUserID', isAuthenticated, async function (req, res) {
 			},
 		],
 	});
-	// console.log(findCharClass);
-	resultArray.push(findCharClass);
+	// console.log(findClass);
+	resultArray.push(findClass);
 
 	// 3. link up the charRace info
 	const findCharRace = await db.Race.findOne({

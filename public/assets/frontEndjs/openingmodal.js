@@ -417,3 +417,4 @@ function saveToLocal(playerSelection) {
 	$('#removeClass').removeClass();
 	$('#classUL').removeClass();
 }
+

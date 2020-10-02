@@ -6,9 +6,9 @@
 //  4. export the charClass table to the database
 
 module.exports = function (sequelize, DataTypes) {
-	const CharClass = sequelize.define(
+	const Class = sequelize.define(
 		// the following 'charClass' define the table name
-		'CharClass',
+		'Class',
 		// the following object define each element inside this table
 		{
 			name: {
@@ -29,11 +29,11 @@ module.exports = function (sequelize, DataTypes) {
 
 	// foreign key setup
 	// 1. maindatabase and class - (one to many relationship)
-	CharClass.associate = function (models) {
-		CharClass.hasMany(models.MainDatabase, {
+	Class.associate = function (models) {
+		Class.hasMany(models.MainDatabase, {
 			onDelete: 'cascade',
 		});
 	};
 
-	return CharClass;
+	return Class;
 };

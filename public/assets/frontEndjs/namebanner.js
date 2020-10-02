@@ -185,7 +185,7 @@ function editClass() {
 	$(document).foundation();
 
 	if (classCount === 0) {
-		$.get('/api/charclass', function (data) {
+		$.get('/api/Class', function (data) {
 			for (let i = 0; i < data.length; i++) {
 				let charCl = data[i].name;
 				let classList = $('<li>', {
