@@ -78,15 +78,15 @@ Small Mobile (iPhone6/7/8):
 
 Large Screen:
 
-![screenshotlg](public/assets/img/front-end-images/screenshot_large.png?raw=true)
+![screenshotlg](public/assets/img/front-end-images/screenshot_large.PNG?raw=true)
 
 Medium Screen:
 
-![screenshotmd](public/assets/img/front-end-images/screenshot_medium.png?raw=true)
+![screenshotmd](public/assets/img/front-end-images/screenshot_medium.PNG?raw=true)
 
 Small Screen:
 
-![screenshotsm](public/assets/img/front-end-images/screenshot_small.png?raw=true)
+![screenshotsm](public/assets/img/front-end-images/screenshot_small.PNG?raw=true)
 
 
 # Code Style
