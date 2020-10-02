@@ -59,15 +59,15 @@ D&D Buddy contains the following features:
 
 Desktop:
 
-![screenshotlg](public\assets/img/front-end-images/desktop-main.PNG?raw=true)
+![screenshotlg](public/assets/img/front-end-images/desktop-main.png?raw=true)
 
 iPad:
 
-![screenshotmd](public\assets/img/front-end-images/ipad-med.PNG?raw=true)
+![screenshotmd](public\assets/img/front-end-images/ipad-med.png?raw=true)
 
 Small Mobile (iPhone6/7/8): 
 
-![screenshotlg](public\assets/img/front-end-images/mobile-models.PNG?raw=true)
+![screenshotlg](public\assets/img/front-end-images/mobile-models.png?raw=true)
 
 
 <br>
@@ -78,15 +78,15 @@ Small Mobile (iPhone6/7/8):
 
 Large Screen:
 
-![screenshotlg](public\assets/img/front-end-images/screenshot_large.PNG?raw=true)
+![screenshotlg](public\assets/img/front-end-images/screenshot_large.png?raw=true)
 
 Medium Screen:
 
-![screenshotmd](public\assets/img/front-end-images/screenshot_medium.PNG?raw=true)
+![screenshotmd](public\assets/img/front-end-images/screenshot_medium.png?raw=true)
 
 Small Screen:
 
-![screenshotsm](public\assets/img/front-end-images/screenshot_small.PNG?raw=true)
+![screenshotsm](public\assets/img/front-end-images/screenshot_small.png?raw=true)
 
 
 # Code Style
