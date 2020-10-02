@@ -63,11 +63,11 @@ Desktop:
 
 iPad:
 
-![screenshotmd](public\assets/img/front-end-images/ipad-med.png?raw=true)
+![screenshotmd](public/assets/img/front-end-images/ipad-med.png?raw=true)
 
 Small Mobile (iPhone6/7/8): 
 
-![screenshotlg](public\assets/img/front-end-images/mobile-models.png?raw=true)
+![screenshotlg](public/assets/img/front-end-images/mobile-models.png?raw=true)
 
 
 <br>
@@ -78,15 +78,15 @@ Small Mobile (iPhone6/7/8):
 
 Large Screen:
 
-![screenshotlg](public\assets/img/front-end-images/screenshot_large.png?raw=true)
+![screenshotlg](public/assets/img/front-end-images/screenshot_large.png?raw=true)
 
 Medium Screen:
 
-![screenshotmd](public\assets/img/front-end-images/screenshot_medium.png?raw=true)
+![screenshotmd](public/assets/img/front-end-images/screenshot_medium.png?raw=true)
 
 Small Screen:
 
-![screenshotsm](public\assets/img/front-end-images/screenshot_small.png?raw=true)
+![screenshotsm](public/assets/img/front-end-images/screenshot_small.png?raw=true)
 
 
 # Code Style
