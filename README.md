@@ -59,7 +59,7 @@ D&D Buddy contains the following features:
 
 Desktop:
 
-![screenshotlg](https://github.com/wmwassmann/dnd-buddy-2.0/tree/william-branch-20/public/assets/img/front-end-images/desktop-main.PNG?raw=true)
+![screenshotlg](public/assets/img/front-end-images/desktop-main.png?raw=true)
 
 iPad:
 
